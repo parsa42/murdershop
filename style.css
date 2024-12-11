@@ -23,7 +23,7 @@ header{
     border-radius: 10px;
     color: white;
     background: #242A38;
-    width: 100%;
+    width: 100% auto;
     height: 150px;
 }
 .logo{
@@ -40,7 +40,7 @@ nav{
 }
 main{
     width: 100% auto;
-    height: 400px;
+    height: 500px auto;
     background-color: #242A38;
     border-radius: 20px;
 }
@@ -54,10 +54,6 @@ main{
     border-radius: 20px;
     text-align: center;
     box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
-}
-.footlogo{
-    width: 150px;
-    padding-top: 20px;
 }
 #nima{
     width: 250px auto;
@@ -77,8 +73,8 @@ main{
     width: 250px;
     max-width: 250px;
     position: relative;
-    top: -337px;
-    left: -300px;
+    top: -169px;
+    left: -130px;
 }
 .matinname{
     color: #fff;
@@ -90,6 +86,10 @@ main{
     position: relative;
     top: -62px;
     left: -25px;
+}
+.footlogo{
+    width: 150px;
+    padding-top: 20px;
 }
 footer{
     background-color: #242A38;
