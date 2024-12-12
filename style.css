@@ -71,25 +71,29 @@ main{
 }
 .nimaname{
     width: 150px;
-    height: 30px;
+    height: 50px;
     background-color: #111827dc;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
     position: relative;
-    top: -83px;
+    top: -89px;
     left: -25px;
 }
 #matin{
-    margin-top: -284px;
+    margin-top: -303px;
     margin-right: 185px;
     width: 200px;
     max-width: 250px;
 }
 .matinname{
     width: 150px;
-    height: 30px;
+    height: 50px;
     background-color: #111827dc;
     position: relative;
-    top: -83px;
+    top: -89px;
     left: -25px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 footer{
     background-color: #242A38;
