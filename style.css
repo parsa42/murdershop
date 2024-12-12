@@ -48,7 +48,7 @@ nav{
 }
 main{
     width: 90% ;
-    height: 500px ;
+    height: 600px ;
     background-color: #242A38;
     border-radius: 20px;
     margin: 0 auto;
@@ -110,4 +110,28 @@ h5{
 span{
     background-color: red;
     border-radius: 1px;
+}
+#gay{
+    width: 200px;
+    max-width: 200px;
+    margin-top: 50px;
+    position: relative;
+    bottom: 100px;
+}
+.gayname{
+    width: 140px;
+    height: 50px;
+    background-color: #111827dc;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+    top: -89px;
+    left: -30px;
+}
+.godyimg{
+    width: 145px;
+    height: 185px;
+    max-width: 140px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
 }
