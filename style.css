@@ -32,8 +32,8 @@ header{
     background: #242A38;
     width: 100% auto;
     height: 150px;
-    border-bottom-right-radius: 1000px;
-    border-bottom-left-radius: 1000px;
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
 }
 .logo{
     box-shadow: 0px 0px 10px 1px rgb(80, 80, 80);
@@ -90,10 +90,6 @@ main{
     position: relative;
     top: -83px;
     left: -25px;
-}
-.footlogo{
-    width: 150px;
-    padding-top: 20px;
 }
 footer{
     background-color: #242A38;
