@@ -1,12 +1,13 @@
 *{
-    font-family: Lalezar-Regular;
+    font-family: dana;
     box-sizing: border-box;
-    font-weight: 100;
+    font-weight: 500;
 }
 @font-face {
-    font-family: lalezar-regular;
-    src: url(../TTF/Lalezar-Regular.ttf);
-}
+    font-family: 'Dana';
+    src: url('fonts/Dana-bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;}
 body{
     text-align: center;
     width: auto;
@@ -49,7 +50,6 @@ main{
     border-radius: 20px;
 }
 .title{
-    font-weight: 100;
     position: relative;
     top: 10px;
     color: white;
