@@ -7,166 +7,219 @@
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="style.css">
   <style>
-    *{
-    font-family: dana;
-    box-sizing: border-box;
-    font-weight: 500;
+    * {
+      font-family: dana;
+      box-sizing: border-box;
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: 'Dana';
+      src: local(Dana-bold) url('fonts/Dana-bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+    }
+    html, body {
+     overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+    overflow-y: auto;   /* فعال کردن اسکرول عمودی */
+    height: 100%;
+    margin: 0;
+    }
+
+    body {
+      margin: 0px;
+      text-align: center;
+      width: auto;
+      height: auto;
+      font-family: dana;
+      font-size: 20px;
+      line-height: 28px;
+      background: #111827;
+      min-height: 100vh; /* اطمینان از حداقل ارتفاع برابر با کل صفحه */
+    }
+
+    section {
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    header {
+      color: white;
+      background: #242A38;
+      width: 100%;
+      height: 150px;
+      border-bottom-right-radius: 100px;
+      border-bottom-left-radius: 100px;
+    }
+
+    .logo {
+      box-shadow: 0px 0px 10px 1px rgb(80, 80, 80);
+      width: 150px;
+      height: 58px;
+      margin: 20px auto;
+    }
+
+    nav {
+      position: relative;
+      top: -50px;
+      word-spacing: 20px;
+    }
+
+    main {
+  width: 90%;
+  max-width: 1200px;
+  background-color: #242A38;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box; /* اضافه شده برای جلوگیری از خروج محتوای داخلی */
+  overflow: hidden; /* اضافه شده برای جلوگیری از بیرون‌زدگی */
 }
-@font-face {
-    font-family: 'Dana';
-    src: local(Dana-bold) url('fonts/Dana-bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
+    .title {
+      position: relative;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .img {
+      width: 100%;
+      max-width: 150px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
+    }
+
+    .product {
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+      vertical-align: top;
+      width: 200px;
+    }
+
+    .product h5 {
+      margin-top: 10px;
+      background-color: #111827dc;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      padding: 10px;
+    }
+
+    footer {
+      background-color: #242A38;
+      width: 100%;
+      height: 100px;
+      border-top-right-radius: 100px;
+      border-top-left-radius: 100px;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    footer .h5footer {
+      color: #fff;
+      text-shadow: black 2px 2px 10px;
+    }
+
+    span {
+      background-color: red;
+      border-radius: 1px;
+      padding: 0 5px;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        height: 100px;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+      }
+
+      .logo {
+        width: 100px;
+        height: 38px;
+      }
+
+      nav {
+        top: -30px;
+        font-size: 14px;
+        word-spacing: 10px;
+      }
+
+      main {
+        width: 95%;
+      }
+
+      .product {
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .product h5 {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        height: 80px;
+      }
+
+      nav {
+        font-size: 12px;
+      }
+
+      .logo {
+        width: 80px;
+        height: 30px;
+      }
+
+      .title {
+        font-size: 18px;
+      }
+
+      .product {
+  display: inline-block;
+  margin: 20px; /* حاشیه متناسب */
+  text-align: center;
+  vertical-align: top;
+  width: calc(100% / 4 - 40px); /* تنظیم عرض در حالت دسکتاپ */
+  box-sizing: border-box;
 }
-body{
-    margin: 0px;
-    text-align: center;
-    width: auto;
-    height: auto;
-    font-family: dana;
-    font-size: 20px;
-    line-height: 28px;
-    background: #111827;
+
+@media (max-width: 768px) {
+  .product {
+    width: 100%; /* در موبایل، محصولات تمام عرض را بگیرند */
+    margin: 20px auto;
+  }
 }
-section{
-    width: 100% auto;
+
+
+@media (max-width: 768px) {
+  .product {
+    width: 100%; /* در موبایل، محصولات تمام عرض را بگیرند */
+    margin: 20px auto;
+  }
 }
-a{
-    color: inherit;
-    text-decoration: none;
-    color: #fff;
-}
-header{
-    color: white;
-    background: #242A38;
-    width: 100% auto;
-    height: 150px;
-    border-bottom-right-radius: 100px;
-    border-bottom-left-radius: 100px;
-}
-.logo{
-    box-shadow: 0px 0px 10px 1px rgb(80, 80, 80);
-    width: 150px ;
-    height: 58px ;
-    margin: 20px auto
-}
-nav{
-    position: relative;
-    top: -50px;
-    word-spacing: 20px;
-}
-main{
-    width: 90% ;
-    height: 600px ;
-    background-color: #242A38;
-    border-radius: 20px;
-    margin: 0 auto;
-}
-.title{
-    position: relative;
-    top: 10px;
-    color: white;
-}
-.img{
-    width: 150px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
-}
-#nima{
-    width: 200px;
-    max-width: 200px;
-    margin-top: 50px;
-}
-.nimaname{
-    width: 150px;
-    height: 50px;
-    background-color: #111827dc;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    position: relative;
-    top: -89px;
-    left: -25px;
-}
-#matin{
-    margin-top: -303px;
-    margin-right: 185px;
-    width: 200px;
-    max-width: 250px;
-}
-.matinname{
-    width: 150px;
-    height: 50px;
-    background-color: #111827dc;
-    position: relative;
-    top: -89px;
-    left: -25px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-#gay{
-    width: 200px;
-    max-width: 200px;
-    margin-top: 50px;
-    position: relative;
-    bottom: 100px;
-}
-.gayname{
-    width: 140px;
-    height: 50px;
-    background-color: #111827dc;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    position: relative;
-    top: -89px;
-    left: -30px;
-}
-.godyimg{
-    width: 145px;
-    height: 185px;
-    max-width: 140px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
-}
-#alikordi{
-  width: 220px;
-  position: relative;
-  top: -402px;
-  left: -180px;
-}
-.kordiimg{
-    width: 220px;
-    height: 185px;
-    max-width: 150px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
-}
-.kordiname{
-    width: 150px;
-    height: 50px;
-    background-color: #111827dc;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    position: relative;
-    top: -88px;
-    left: -35px;
-}
-footer{
-    background-color: #242A38;
-    width: 100%;
-    height: 100px;
-    border-top-right-radius: 100px;
-    border-top-left-radius: 100px;    
-}
-h5{
-    color: #fff;
-    text-shadow: black 2px 2px 10px;
-    text-align: center;
-}
-span{
-    background-color: red;
-    border-radius: 1px;
-}
+
+
+      footer {
+        height: auto;
+        padding: 20px;
+      }
+    }
+    .img, .godyimg, .kordiimg {
+  max-width: 100%; /* تصاویر حداکثر به اندازه کادر خود باشند */
+  height: auto; /* تناسب تصاویر حفظ شود */
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
+    }
 
   </style>
 </head>
@@ -175,8 +228,8 @@ span{
     <header>
       <div>
         <a href="index.html">
-          <img class="logo" src="logo.png" alt=" قتل نیوز ">
-          </a>
+          <img class="logo" src="logo.png" alt="قتل نیوز">
+        </a>
       </div>
     </header>
     <nav>
@@ -190,46 +243,35 @@ span{
   </section>
   <section>
     <main>
-      <section class="items">
-        <div>
-          <h3 class="title"> جدید ترین محصولات </h3>
-        </div>
-        <div id="nima">
-          <a href="#">
-            <img class="img" src="nima2.jpg" alt="nima" title="nima">
-            <h5 class="nimaname"> نیما مدل:Zombie کد:149131 </h5>
-          </a>
-        </div>
-        <div id="matin">
-          <a href="https://www.google.com/">
-            <img class="img" src="matin.jpg" alt="matin" title="matin">
-            <h5 class="matinname"> متین مدل:Firstday کد:1402 </h5>
-          </a>
-        </div>
-        <div id="gay">
-          <a href="#">
-              <img class="godyimg" src="godarzi2.jpg" alt="gay">
-              <h5 class="gayname"> تابلو گودرزی مدل:مونالیزا کد:174 </h5>
-          </a>
-      </div>
-      <div id="alikordi">
+      <h3 class="title">جدیدترین محصولات</h3>
+      <div class="product">
         <a href="#">
-          <img class="kordiimg" src="alikordi4.jpg" alt="alikordi">
-          <h5 class="kordiname"> علی کردی مدل:سوءتغذیه کد:63 </h5>
+          <img class="img" src="nima2.jpg" alt="nima" title="nima">
+          <h5>نیما مدل: Zombie کد: 149131</h5>
         </a>
       </div>
-      </section>
+      <div class="product">
+        <a href="#">
+          <img class="img" src="matin.jpg" alt="matin" title="matin">
+          <h5>متین مدل: Firstday کد: 1402</h5>
+        </a>
+      </div>
+      <div class="product">
+        <a href="#">
+          <img class="img" src="godarzi2.jpg" alt="gay">
+          <h5>تابلو گودرزی مدل: مونالیزا کد: 174</h5>
+        </a>
+      </div>
+      <div class="product">
+        <a href="#">
+          <img class="img" src="alikordi4.jpg" alt="alikordi">
+          <h5>علی کردی مدل: سوءتغذیه کد: 63</h5>
+        </a>
+      </div>
     </main>
   </section>
-  <br>
   <footer>
-    <section>
-      <div>
-        <h5>
-          <p class="h5footer"> تمامی حقوق برای سایت <span>قتل شاپ</span> مفحوظ است. </p>
-        </h5>
-      </div>
-    </section>
+    <h5 class="h5footer">تمامی حقوق برای سایت <span>قتل شاپ</span> محفوظ است.</h5>
   </footer>
 </body>
 </html>
