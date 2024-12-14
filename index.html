@@ -5,273 +5,254 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>قتل شاپ</title>
   <link rel="shortcut icon" href="logo.png">
-  <link rel="stylesheet" href="style.css">
   <style>
     * {
       font-family: dana;
       box-sizing: border-box;
-      font-weight: 500;
+      margin: 0;
+      padding: 0;
     }
 
     @font-face {
       font-family: 'Dana';
-      src: local(Dana-bold) url('fonts/Dana-bold.woff2') format('woff2');
+      src: url('fonts/Dana-bold.woff2') format('woff2');
       font-weight: bold;
       font-style: normal;
     }
+
     html, body {
-     overflow-x: hidden; /* جلوگیری از اسکرول افقی */
-    overflow-y: auto;   /* فعال کردن اسکرول عمودی */
-    height: 100%;
-    margin: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+      background: #111827;
     }
 
     body {
-      margin: 0px;
-      text-align: center;
-      width: auto;
-      height: auto;
-      font-family: dana;
       font-size: 20px;
       line-height: 28px;
-      background: #111827;
-      min-height: 100vh; /* اطمینان از حداقل ارتفاع برابر با کل صفحه */
+      text-align: center;
+      min-height: 100vh;
     }
-
-    section {
-      width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      color: #fff;
-    }
-
     header {
-      color: white;
-      background: #242A38;
-      width: 100%;
-      height: 150px;
-      border-bottom-right-radius: 100px;
-      border-bottom-left-radius: 100px;
+    display: flex; /* استفاده از فلکس‌باکس */
+    flex-direction: column; /* المان‌ها در ستون قرار بگیرند */
+    align-items: center; /* هم‌تراز کردن المان‌ها */
+    justify-content: center; /* مرکز قرار دادن محتوا */
+    color: white;
+    background: #242A38;
+    width: 100%;
+    height: 150px; /* ارتفاع هدر */
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    text-align: center; /* متن‌ها در مرکز */
+    padding: 0; /* حذف فضای داخلی اضافی */
+  }
+
+  .logo {
+    width: 150px;
+    height: auto;
+    box-shadow: 0px 0px 10px 1px rgb(80, 80, 80);
+    margin-bottom: 10px; /* فاصله از لینک‌ها */
+  }
+
+  nav {
+    display: flex; /* چیدمان لینک‌ها در یک خط */
+    justify-content: center; /* قرار گرفتن لینک‌ها در مرکز */
+    gap: 30px; /* فاصله بین لینک‌ها */
+    margin: 0; /* حذف حاشیه اضافی */
+  }
+
+  nav a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none; /* حذف خط زیر لینک‌ها */
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff4500; /* رنگ جدید هنگام هاور */
+    transform: scale(1.1); /* انیمیشن بزرگ شدن */
+  }
+
+  /* تغییرات ریسپانسیو */
+  @media (max-width: 768px) {
+    header {
+      height: 120px; /* کاهش ارتفاع در تبلت */
     }
 
     .logo {
-      box-shadow: 0px 0px 10px 1px rgb(80, 80, 80);
-      width: 150px;
-      height: 58px;
-      margin: 20px auto;
+      width: 120px;
+    }
+
+    nav a {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header {
+      height: 100px;
+    }
+
+    .logo {
+      width: 100px;
     }
 
     nav {
-      position: relative;
-      top: -50px;
-      word-spacing: 20px;
+      flex-direction: column; /* لینک‌ها در ستون قرار بگیرند */
+      gap: 15px;
     }
 
+    nav a {
+      font-size: 16px;
+    }
+  }
     main {
-  width: 90%;
-  max-width: 1200px;
-  background-color: #242A38;
-  border-radius: 20px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box; /* اضافه شده برای جلوگیری از خروج محتوای داخلی */
-  overflow: hidden; /* اضافه شده برای جلوگیری از بیرون‌زدگی */
-}
-    .title {
-      position: relative;
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    .img {
-      width: 100%;
-      max-width: 150px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #242A38;
       border-radius: 20px;
-      text-align: center;
-      box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
+      min-height: 600px;
+      overflow: hidden; /* جلوگیری از تجاوز محتوای داخلی */
     }
 
     .product {
       display: inline-block;
-      margin: 20px;
-      text-align: center;
+      width: calc(25% - 20px); /* تقسیم صفحه به 4 ستون */
+      margin: 10px;
       vertical-align: top;
-      width: 200px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
+    .product:hover {
+    transform: scale(1.05); /* بزرگ شدن محصول */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* سایه عمیق‌تر */
+  }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
+      transition: transform 0.3s ease; /* انیمیشن برای تصویر */
+    }
+    .product:hover img {
+    transform: rotate(5deg); /* چرخش کوچک تصویر هنگام هاور */
+  }
     .product h5 {
       margin-top: 10px;
       background-color: #111827dc;
       border-bottom-right-radius: 20px;
       border-bottom-left-radius: 20px;
       padding: 10px;
+      color: #fff;
+      transition: color 0.3s ease; /* انیمیشن برای متن */
     }
-
+    .product:hover h5 {
+    color: #ff4500; /* تغییر رنگ متن هنگام هاور */
+    text-shadow: 0 0 5px rgba(255, 69, 0, 0.7); /* سایه به متن */
+  }
     footer {
       background-color: #242A38;
       width: 100%;
-      height: 100px;
+      text-align: center;
+      padding: 20px;
       border-top-right-radius: 100px;
       border-top-left-radius: 100px;
-      text-align: center;
-      padding: 30px 0;
     }
 
-    footer .h5footer {
+    footer h5 {
       color: #fff;
-      text-shadow: black 2px 2px 10px;
+      text-shadow: 2px 2px 10px black;
     }
 
     span {
       background-color: red;
-      border-radius: 1px;
+      border-radius: 5px;
       padding: 0 5px;
     }
 
-    /* Media Queries for Responsive Design */
+    /* ریسپانسیو برای تبلت */
     @media (max-width: 768px) {
-      header {
-        height: 100px;
-        border-bottom-right-radius: 50px;
-        border-bottom-left-radius: 50px;
+      .product {
+        width: calc(50% - 20px); /* تقسیم صفحه به 2 ستون */
+      }
+
+      nav a {
+        font-size: 16px;
+      }
+
+      .logo {
+        width: 120px;
+      }
+      .product:hover {
+      transform: none; /* غیرفعال کردن بزرگ‌نمایی */
+      box-shadow: none; /* حذف سایه اضافی */
+    }
+    .product:hover img {
+      transform: none; /* غیرفعال کردن چرخش تصویر */
+    }
+    }
+
+    /* ریسپانسیو برای موبایل */
+    @media (max-width: 480px) {
+      .product {
+        width: 100%; /* تمام عرض صفحه */
+      }
+
+      nav {
+        font-size: 14px;
       }
 
       .logo {
         width: 100px;
-        height: 38px;
-      }
-
-      nav {
-        top: -30px;
-        font-size: 14px;
-        word-spacing: 10px;
-      }
-
-      main {
-        width: 95%;
-      }
-
-      .product {
-        display: block;
-        margin: 20px auto;
-        width: 100%;
-        max-width: 300px;
-      }
-
-      .product h5 {
-        font-size: 14px;
       }
     }
-
-    @media (max-width: 480px) {
-      header {
-        height: 80px;
-      }
-
-      nav {
-        font-size: 12px;
-      }
-
-      .logo {
-        width: 80px;
-        height: 30px;
-      }
-
-      .title {
-        font-size: 18px;
-      }
-
-      .product {
-  display: inline-block;
-  margin: 20px; /* حاشیه متناسب */
-  text-align: center;
-  vertical-align: top;
-  width: calc(100% / 4 - 40px); /* تنظیم عرض در حالت دسکتاپ */
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  .product {
-    width: 100%; /* در موبایل، محصولات تمام عرض را بگیرند */
-    margin: 20px auto;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .product {
-    width: 100%; /* در موبایل، محصولات تمام عرض را بگیرند */
-    margin: 20px auto;
-  }
-}
-
-
-      footer {
-        height: auto;
-        padding: 20px;
-      }
-    }
-    .img, .godyimg, .kordiimg {
-  max-width: 100%; /* تصاویر حداکثر به اندازه کادر خود باشند */
-  height: auto; /* تناسب تصاویر حفظ شود */
-  border-radius: 20px;
-  box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
-    }
-
   </style>
 </head>
 <body>
-  <section>
-    <header>
-      <div>
-        <a href="index.html">
-          <img class="logo" src="logo.png" alt="قتل نیوز">
-        </a>
-      </div>
-    </header>
-    <nav>
-      <div id="nav">
-        <a href="human.html"> انسان </a>
-        <a href="#"> حیوانات </a>
-        <a href="arts.html"> آثارهنری </a>
-        <a href="#"> وبلاگ </a>
-      </div>
-    </nav>
-  </section>
-  <section>
-    <main>
-      <h3 class="title">جدیدترین محصولات</h3>
+  <header>
+    <a href="index.html">
+      <img class="logo" src="logo.png" alt="قتل نیوز">
+    </a>
+  </header>
+  <nav>
+    <a href="human.html">انسان</a>
+    <a href="#">حیوانات</a>
+    <a href="arts.html">آثار هنری</a>
+    <a href="#">وبلاگ</a>
+  </nav>
+  <main>
+    <h3 style="color: white; margin-bottom: 20px;">جدیدترین محصولات</h3>
+    <a href="#">
       <div class="product">
-        <a href="#">
-          <img class="img" src="nima2.jpg" alt="nima" title="nima">
-          <h5>نیما مدل: Zombie کد: 149131</h5>
-        </a>
+        <img src="nima2.jpg" alt="nima" title="nima">
+        <h5>نیما مدل: Zombie کد: 149131</h5>
       </div>
+    </a>
+   <a href="#">
+    <div class="product">
+      <img src="matin.jpg" alt="matin" title="matin">
+      <h5>متین مدل: Firstday کد: 1402</h5>
+    </div>
+   </a>
+    <a href="#">
       <div class="product">
-        <a href="#">
-          <img class="img" src="matin.jpg" alt="matin" title="matin">
-          <h5>متین مدل: Firstday کد: 1402</h5>
-        </a>
+        <img src="godarzi2.jpg" alt="godarzi">
+        <h5>تابلو گودرزی مدل: مونالیزا کد: 174</h5>
       </div>
+    </a>
+    <a href="#">
       <div class="product">
-        <a href="#">
-          <img class="img" src="godarzi2.jpg" alt="gay">
-          <h5>تابلو گودرزی مدل: مونالیزا کد: 174</h5>
-        </a>
+        <img src="alikordi4.jpg" alt="alikordi">
+        <h5>علی کردی مدل: سوءتغذیه کد: 63</h5>
       </div>
-      <div class="product">
-        <a href="#">
-          <img class="img" src="alikordi4.jpg" alt="alikordi">
-          <h5>علی کردی مدل: سوءتغذیه کد: 63</h5>
-        </a>
-      </div>
-    </main>
-  </section>
+    </a>
+  </main>
   <footer>
-    <h5 class="h5footer">تمامی حقوق برای سایت <span>قتل شاپ</span> محفوظ است.</h5>
+    <h5>تمامی حقوق برای سایت <span>قتل شاپ</span> محفوظ است.</h5>
   </footer>
 </body>
 </html>
