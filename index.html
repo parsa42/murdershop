@@ -6,6 +6,7 @@
   <title>قتل شاپ</title>
   <link rel="shortcut icon" href="logo.png">
   <style>
+    /* تنظیمات پایه */
     * {
       font-family: dana;
       box-sizing: border-box;
@@ -14,170 +15,132 @@
     }
 
     @font-face {
-      font-family: 'Dana';
+      font-family: 'dana';
       src: url('fonts/Dana-bold.woff2') format('woff2');
       font-weight: bold;
       font-style: normal;
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow-x: hidden; /* جلوگیری از اسکرول افقی */
-      background: #111827;
-    }
-
     body {
       font-size: 20px;
-      line-height: 28px;
+      line-height: 1.4;
       text-align: center;
       min-height: 100vh;
+      background: #111;
+      color: #fff;
+      overflow-x: hidden; /* جلوگیری از اسکرول افقی */
     }
+
     header {
-    display: flex; /* استفاده از فلکس‌باکس */
-    flex-direction: column; /* المان‌ها در ستون قرار بگیرند */
-    align-items: center; /* هم‌تراز کردن المان‌ها */
-    justify-content: center; /* مرکز قرار دادن محتوا */
-    color: white;
-    background: #242A38;
-    width: 100%;
-    height: 150px; /* ارتفاع هدر */
-    border-bottom-right-radius: 100px;
-    border-bottom-left-radius: 100px;
-    text-align: center; /* متن‌ها در مرکز */
-    padding: 0; /* حذف فضای داخلی اضافی */
-  }
-
-  .logo {
-    width: 150px;
-    height: auto;
-    box-shadow: 0px 0px 10px 1px rgb(80, 80, 80);
-    margin-bottom: 10px; /* فاصله از لینک‌ها */
-  }
-
-  nav {
-    display: flex; /* چیدمان لینک‌ها در یک خط */
-    justify-content: center; /* قرار گرفتن لینک‌ها در مرکز */
-    gap: 30px; /* فاصله بین لینک‌ها */
-    margin: 0; /* حذف حاشیه اضافی */
-  }
-
-  nav a {
-    color: #fff;
-    font-size: 20px;
-    text-decoration: none; /* حذف خط زیر لینک‌ها */
-    transition: color 0.3s, transform 0.3s;
-  }
-
-  nav a:hover {
-    color: #ff4500; /* رنگ جدید هنگام هاور */
-    transform: scale(1.1); /* انیمیشن بزرگ شدن */
-  }
-
-  /* تغییرات ریسپانسیو */
-  @media (max-width: 768px) {
-    header {
-      height: 120px; /* کاهش ارتفاع در تبلت */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 150px;
+      border-bottom-right-radius: 50px;
+      border-bottom-left-radius: 50px;
+      background: #2F4F4F;
     }
 
     .logo {
-      width: 120px;
-    }
-
-    nav a {
-      font-size: 18px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    header {
-      height: 100px;
-    }
-
-    .logo {
-      width: 100px;
+      width: 150px;
+      height: auto;
+      box-shadow: 0 0 10px rgba(80, 80, 80, 0.8);
+      margin-bottom: 10px;
     }
 
     nav {
-      flex-direction: column; /* لینک‌ها در ستون قرار بگیرند */
-      gap: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
     }
 
     nav a {
-      font-size: 16px;
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
     }
-  }
+
+    nav a:hover {
+      color: #ff4500;
+      transform: scale(1.1);
+    }
+
     main {
       width: 90%;
       max-width: 1200px;
       margin: 20px auto;
       padding: 20px;
-      background-color: #242A38;
+      background: #2F4F4F;
       border-radius: 20px;
       min-height: 600px;
-      overflow: hidden; /* جلوگیری از تجاوز محتوای داخلی */
     }
 
     .product {
       display: inline-block;
-      width: calc(25% - 20px); /* تقسیم صفحه به 4 ستون */
+      width: calc(25% - 20px);
       margin: 10px;
       vertical-align: top;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .product:hover {
-    transform: scale(1.05); /* بزرگ شدن محصول */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* سایه عمیق‌تر */
-  }
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    }
+
     .product img {
       width: 100%;
       height: auto;
       border-radius: 20px;
-      box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
-      transition: transform 0.3s ease; /* انیمیشن برای تصویر */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+      transition: transform 0.3s ease;
     }
+
     .product:hover img {
-    transform: rotate(5deg); /* چرخش کوچک تصویر هنگام هاور */
-  }
+      transform: rotate(2deg);
+      box-shadow: 0 0 15px #8B0000;
+    }
+
     .product h5 {
       margin-top: 10px;
-      background-color: #111827dc;
-      border-bottom-right-radius: 20px;
-      border-bottom-left-radius: 20px;
       padding: 10px;
+      background: rgba(17, 24, 39, 0.86);
       color: #fff;
-      transition: color 0.3s ease; /* انیمیشن برای متن */
+      border-radius: 0 0 20px 20px;
+      transition: color 0.3s;
     }
+
     .product:hover h5 {
-    color: #ff4500; /* تغییر رنگ متن هنگام هاور */
-    text-shadow: 0 0 5px rgba(255, 69, 0, 0.7); /* سایه به متن */
-  }
+      color: #8B0000;
+      text-shadow: 0 0 5px rgba(255, 69, 0, 0.7);
+    }
+
     footer {
-      background-color: #242A38;
       width: 100%;
       text-align: center;
       padding: 20px;
-      border-top-right-radius: 100px;
-      border-top-left-radius: 100px;
+      border-top-right-radius: 50px;
+      border-top-left-radius: 50px;
+      background: #2F4F4F;
+      color: #fff;
     }
 
     footer h5 {
-      color: #fff;
       text-shadow: 2px 2px 10px black;
     }
 
     span {
-      background-color: red;
+      background: red;
       border-radius: 5px;
       padding: 0 5px;
     }
 
-    /* ریسپانسیو برای تبلت */
+    /* استایل ریسپانسیو */
     @media (max-width: 768px) {
       .product {
-        width: calc(50% - 20px); /* تقسیم صفحه به 2 ستون */
+        width: calc(50% - 20px);
       }
 
       nav a {
@@ -187,27 +150,24 @@
       .logo {
         width: 120px;
       }
-      .product:hover {
-      transform: none; /* غیرفعال کردن بزرگ‌نمایی */
-      box-shadow: none; /* حذف سایه اضافی */
-    }
-    .product:hover img {
-      transform: none; /* غیرفعال کردن چرخش تصویر */
-    }
     }
 
-    /* ریسپانسیو برای موبایل */
     @media (max-width: 480px) {
       .product {
-        width: 100%; /* تمام عرض صفحه */
-      }
-
-      nav {
-        font-size: 14px;
+        width: 100%;
       }
 
       .logo {
         width: 100px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 14px;
       }
     }
   </style>
@@ -218,12 +178,14 @@
       <img class="logo" src="logo.png" alt="قتل نیوز">
     </a>
   </header>
+
   <nav>
     <a href="human.html">انسان</a>
     <a href="#">حیوانات</a>
     <a href="arts.html">آثار هنری</a>
-    <a href="#">وبلاگ</a>
+    <a href="../murdernews.html">اخبار</a>
   </nav>
+
   <main>
     <h3 style="color: white; margin-bottom: 20px;">جدیدترین محصولات</h3>
     <a href="#">
@@ -232,12 +194,12 @@
         <h5>نیما مدل: Zombie کد: 149131</h5>
       </div>
     </a>
-   <a href="#">
-    <div class="product">
-      <img src="matin.jpg" alt="matin" title="matin">
-      <h5>متین مدل: Firstday کد: 1402</h5>
-    </div>
-   </a>
+    <a href="#">
+      <div class="product">
+        <img src="matin.jpg" alt="matin" title="matin">
+        <h5>متین مدل: Firstday کد: 1402</h5>
+      </div>
+    </a>
     <a href="#">
       <div class="product">
         <img src="godarzi2.jpg" alt="godarzi">
@@ -251,8 +213,14 @@
       </div>
     </a>
   </main>
+
   <footer>
-    <h5>تمامی حقوق برای سایت <span>قتل شاپ</span> محفوظ است.</h5>
+    <p>&copy; 2024 قتل نیوز. تمامی حقوق محفوظ است.</p>
+        <p>
+            <a href="#">فیسبوک</a> |
+            <a href="#">توییتر</a> |
+            <a href="#">اینستاگرام</a>
+        </p>
   </footer>
 </body>
 </html>
