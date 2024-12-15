@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قتل شاپ</title>
+  <link rel="shortcut icon" href="logo.png">
+  <style>
+    /* تنظیمات پایه */
+    * {
+      font-family: dana;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: 'dana';
+      src: url('fonts/Dana-bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    body {
+      font-size: 20px;
+      line-height: 1.4;
+      text-align: center;
+      min-height: 100vh;
+      background: #111;
+      color: #fff;
+      overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 150px;
+      border-bottom-right-radius: 50px;
+      border-bottom-left-radius: 50px;
+      background: #2F4F4F;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+      box-shadow: 0 0 10px rgba(80, 80, 80, 0.8);
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff4500;
+      transform: scale(1.1);
+    }
+
+    main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #2F4F4F;
+      border-radius: 20px;
+      min-height: 600px;
+    }
+
+    .product {
+      display: inline-block;
+      width: calc(25% - 20px);
+      margin: 10px;
+      vertical-align: top;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover img {
+      transform: rotate(2deg);
+      box-shadow: 0 0 15px #8B0000;
+    }
+
+    .product h5 {
+      margin-top: 10px;
+      padding: 10px;
+      background: rgba(17, 24, 39, 0.86);
+      color: #fff;
+      border-radius: 0 0 20px 20px;
+      transition: color 0.3s;
+    }
+
+    .product:hover h5 {
+      color: #8B0000;
+      text-shadow: 0 0 5px rgba(255, 69, 0, 0.7);
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      border-top-right-radius: 50px;
+      border-top-left-radius: 50px;
+      background: #2F4F4F;
+      color: #fff;
+    }
+
+    footer h5 {
+      text-shadow: 2px 2px 10px black;
+    }
+
+    span {
+      background: red;
+      border-radius: 5px;
+      padding: 0 5px;
+    }
+
+    /* استایل ریسپانسیو */
+    @media (max-width: 768px) {
+      .product {
+        width: calc(50% - 20px);
+      }
+
+      nav a {
+        font-size: 16px;
+      }
+
+      .logo {
+        width: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product {
+        width: 100%;
+      }
+
+      .logo {
+        width: 100px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img class="logo" src="logo.png" alt="قتل نیوز">
+    </a>
+  </header>
+
+  <nav>
+    <a href="human.html">انسان</a>
+    <a href="#">حیوانات</a>
+    <a href="arts.html">آثار هنری</a>
+    <a href="murdernews.html">اخبار</a>
+  </nav>
+
+  <main>
+    <h3 style="color: white; margin-bottom: 20px;">جدیدترین محصولات</h3>
+    <a href="#">
+      <div class="product">
+        <img src="nima2.jpg" alt="nima" title="nima">
+        <h5>نیما مدل: Zombie کد: 149131</h5>
+      </div>
+    </a>
+    <a href="#">
+      <div class="product">
+        <img src="matin.jpg" alt="matin" title="matin">
+        <h5>متین مدل: Firstday کد: 1402</h5>
+      </div>
+    </a>
+    <a href="#">
+      <div class="product">
+        <img src="godarzi2.jpg" alt="godarzi">
+        <h5>تابلو گودرزی مدل: مونالیزا کد: 174</h5>
+      </div>
+    </a>
+    <a href="#">
+      <div class="product">
+        <img src="alikordi4.jpg" alt="alikordi">
+        <h5>علی کردی مدل: سوءتغذیه کد: 63</h5>
+      </div>
+    </a>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 قتل نیوز. تمامی حقوق محفوظ است.</p>
+        <p>
+            <a href="#">تلگرام</a> |
+            <a href="#">توییتر</a> |
+            <a href="#">اینستاگرام</a>
+        </p>
+  </footer>
+</body>
+</html>
