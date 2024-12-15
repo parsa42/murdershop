@@ -53,6 +53,8 @@
       display: flex;
       justify-content: center;
       gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 10px;
     }
 
     nav a {
@@ -138,6 +140,20 @@
     }
 
     /* استایل ریسپانسیو */
+    @media (max-width: 1024px) {
+      .product {
+        width: calc(33.33% - 20px);
+      }
+
+      nav a {
+        font-size: 18px;
+      }
+
+      .logo {
+        width: 130px;
+      }
+    }
+
     @media (max-width: 768px) {
       .product {
         width: calc(50% - 20px);
@@ -216,11 +232,11 @@
 
   <footer>
     <p>&copy; 2024 قتل نیوز. تمامی حقوق محفوظ است.</p>
-        <p>
-            <a href="#">تلگرام</a> |
-            <a href="#">توییتر</a> |
-            <a href="#">اینستاگرام</a>
-        </p>
+    <p>
+      <a href="#">تلگرام</a> |
+      <a href="#">توییتر</a> |
+      <a href="#">اینستاگرام</a>
+    </p>
   </footer>
 </body>
 </html>
