@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قتل نیوز</title>
+    <link rel="shortcut icon" href="../img/logo.png">
     <style>
         *{
             font-family: dana;
@@ -31,6 +32,9 @@
             background-color: #FFEBEE;
             color: black;
         }
+        a{
+            text-decoration: none;
+        }
         nav {
             background-color: #333;
             overflow: hidden;
@@ -41,6 +45,7 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
         }
         nav a:hover {
             background-color: #ddd;
@@ -55,6 +60,11 @@
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .news-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .news-title {
             font-size: 1.5em;
@@ -70,9 +80,18 @@
             height: auto;
         }
         .shop-link{
-            background-color: #B71C1C;
             font-weight: bolder;
             border-radius: 100px;
+        }
+        .shop-link a {
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .shop-link a:hover {
+            background-color: white;
+            color: #B71C1C;
         }
         /* استایل فوتر */
         footer {
@@ -88,15 +107,19 @@
             color: white;
             text-decoration: none;
             margin: 0 10px;
+            transition: color 0.3s;
         }
         footer a:hover {
             text-decoration: underline;
+            color: #ff4500;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="logo" title="قتل نیوز" class="logo-img">
+        <a href="murdernews.html">
+            <img src="../img/logo.png" alt="logo" title="قتل نیوز" class="logo-img">
+        </a>
         <p class="title">آخرین اخبار و تحلیل‌های جنایی</p>
     </header>
 
@@ -105,22 +128,34 @@
         <a href="#">اخبار روز</a>
         <a href="#">تحقیقات</a>
         <a href="#">پرونده‌های مهم</a>
-        <a href="#">تماس با ما</a>
+        <a href="tel:09368804521">تماس با ما</a>
     </nav>
-
-    <div class="container">
-        <div class="news-item">
-            <div class="news-title">قتل در خیابان ولیعصر</div>
-            <div class="news-description">یک قتل هولناک در خیابان ولیعصر رخ داده است. تحقیقات پلیس در حال انجام است.</div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">تحلیل پرونده‌های جنایی</div>
-            <div class="news-description">در این مقاله به بررسی پرونده‌های جنایی مهم پرداخته‌ایم. چطور می‌توان از وقوع قتل‌ها جلوگیری کرد؟</div>
-        </div>
-        <div class="news-item">
-            <div class="news-title">قتل‌های سریالی در تهران</div>
-            <div class="news-description">پلیس تهران به دنبال قاتل سریالی است. جزئیات بیشتری از تحقیقات منتشر شده است.</div>
-        </div>
+    <div>
+    <a href="#">
+        <div class="container">
+            <div class="news-item">
+                <div class="news-title">قتل در فرهنگسرا </div>
+                <div class="news-description">یک قتل هولناک در فرهنگسرا امام خمینی رخ داده است. تحقیقات پلیس در حال انجام است. بیشتر بخوانید...</div>
+            </div>
+    </a>
+        <a href="#">
+            <div class="news-item">
+                <div class="news-title">کوهنورد برنو بدست</div>
+                <div class="news-description">کوهنوردی در کوه های توچال پاکدشت دیده شده است که با برنو نسل حیوانات بومی را منقرض کرده است. بیشتر بخوانید...</div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="news-item">
+                <div class="news-title">تحلیل پرونده‌های جنایی</div>
+                <div class="news-description">در این مقاله به بررسی پرونده‌های جنایی مهم پرداخته‌ایم. چطور می‌توان از وقوع قتل‌ها جلوگیری کرد؟ بیشتر بخوانید...</div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="news-item">
+                <div class="news-title">قتل‌های سریالی در پاکدشت</div>
+                <div class="news-description">پلیس پاکدشت به دنبال قاتل سریالی است. جزئیات بیشتری از تحقیقات منتشر شده است. بیشتر بخوانید...</div>
+            </div>
+        </a>
     </div>
 
     <!-- فوتر -->
