@@ -26,7 +26,7 @@
       line-height: 1.4;
       text-align: center;
       min-height: 100vh;
-      background: #111;
+      background: #111827;
       color: #fff;
       overflow-x: hidden; /* جلوگیری از اسکرول افقی */
     }
@@ -39,7 +39,7 @@
       height: 150px;
       border-bottom-right-radius: 50px;
       border-bottom-left-radius: 50px;
-      background: #2F4F4F;
+      background: #242A38;
     }
 
     .logo {
@@ -53,11 +53,13 @@
       display: flex;
       justify-content: center;
       gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 0px;
     }
 
     nav a {
       color: #fff;
-      font-size: 20px;
+      font-size: 24px;
       text-decoration: none;
       transition: color 0.3s, transform 0.3s;
     }
@@ -77,6 +79,10 @@
       min-height: 600px;
     }
 
+    a{
+      color: white;
+      text-decoration: none;
+    }
     .product {
       display: inline-block;
       width: calc(25% - 20px);
@@ -138,6 +144,20 @@
     }
 
     /* استایل ریسپانسیو */
+    @media (max-width: 1024px) {
+      .product {
+        width: calc(33.33% - 20px);
+      }
+
+      nav a {
+        font-size: 18px;
+      }
+
+      .logo {
+        width: 130px;
+      }
+    }
+
     @media (max-width: 768px) {
       .product {
         width: calc(50% - 20px);
@@ -181,25 +201,36 @@
 
   <nav>
     <a href="human.html">انسان</a>
-    <a href="#">حیوانات</a>
     <a href="arts.html">آثار هنری</a>
-    <a href="#">وبلاگ</a>
+    <a href="../murdernews/murdernews.html">اخبار</a>
   </nav>
 
   <main>
     <h3 style="color: white; margin-bottom: 20px;">جدیدترین محصولات</h3>
-    <div class="product">
-      <img src="nima2.jpg" alt="nima" title="nima">
-      <h5>نیما مدل: Zombie کد: 149131</h5>
-    </div>
-    <div class="product">
-      <img src="matin.jpg" alt="matin" title="matin">
-      <h5>متین مدل: Firstday کد: 1402</h5>
-    </div>
-    <div class="product">
-      <img src="alikordi4.jpg" alt="alikordi">
-      <h5>علی کردی مدل: سوءتغذیه کد: 63</h5>
-    </div>
+    <a href="#">
+      <div class="product">
+        <img src="parsa2.jpg" alt="parsa" title="پارسا">
+        <h5>پارسا مدل:shower کد:43kg</h5>
+      </div>
+    </a>
+    <a href="#">
+      <div class="product">
+        <img src="nima2.jpg" alt="nima" title="nima">
+        <h5>نیما مدل: Zombie کد: 149131</h5>
+      </div>
+    </a>
+    <a href="#">
+      <div class="product">
+        <img src="matin.jpg" alt="matin" title="matin">
+        <h5>متین مدل: Firstday کد: 1402</h5>
+      </div>
+    </a>
+    <a href="#">
+      <div class="product">
+        <img src="alikordi4.jpg" alt="alikordi">
+        <h5>علی کردی مدل: سوءتغذیه کد: 63</h5>
+      </div>
+    </a>
   </main>
 
   <footer>
