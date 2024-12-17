@@ -89,6 +89,7 @@
       margin: 10px;
       vertical-align: top;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 0px 0px 20px 20px;
     }
 
     .product:hover {
@@ -152,6 +153,12 @@
             border-radius: 10px;
             border: solid black 2px;
         }
+        .support:hover{
+          background-color: #111827;
+        }
+        .support:active{
+          background-color: #111827;
+        }
     /* استایل ریسپانسیو */
     @media (max-width: 1024px) {
       .product {
@@ -204,13 +211,14 @@
 <body>
   <header>
     <a href="index.html">
-      <img class="logo" src="logo.png" alt="قتل نیوز">
+      <img class="logo" src="logo.png" alt="قتل نیوز" loading="lazy">
     </a>
   </header>
 
   <nav>
     <a href="human.html">انسان</a>
     <a href="arts.html">آثار هنری</a>
+    <a href="bizzare.html">عجیب غریب</a>
     <a href="murdernews.html">اخبار</a>
   </nav>
 
@@ -218,43 +226,63 @@
     <h3 style="color: white; margin-bottom: 20px;">جدیدترین محصولات</h3>
     <a href="#">
       <div class="product">
-        <img src="parsa2.jpg" alt="parsa" title="پارسا">
+        <img src="parsa2.jpg" alt="parsa" title="پارسا" loading="lazy">
         <h5>پارسا مدل:shower کد:43kg</h5>
       </div>
     </a>
     <a href="#">
       <div class="product">
-        <img src="nima2.jpg" alt="nima" title="nima">
+        <img src="nima2.jpg" alt="nima" title="nima" loading="lazy">
         <h5>نیما مدل: Zombie کد: 149131</h5>
       </div>
     </a>
     <a href="#">
       <div class="product">
-        <img src="matin.jpg" alt="matin" title="matin">
+        <img src="matin.jpg" alt="matin" title="matin" loading="lazy">
         <h5>متین مدل: Firstday کد: 1402</h5>
       </div>
     </a>
     <a href="#">
       <div class="product">
-        <img src="godarzi2.jpg" alt="godarzi">
+        <img src="godarzi2.jpg" alt="godarzi" loading="lazy">
         <h5>تابلو گودرزی مدل: مونالیزا کد: 174</h5>
       </div>
     </a>
     <a href="#">
       <div class="product">
-        <img src="alikordi4.jpg" alt="alikordi">
+        <img src="alikordi4.jpg" alt="alikordi" loading="lazy">
         <h5>علی کردی مدل: سوءتغذیه کد: 4859</h5>
       </div>
     </a>
     <a href="#">
+      <div class="product">
+        <img src="hadichopan.jpg" alt="hadi chopan">
+        <h5>هادی چوپان مدل:عربده کد:1</h5>
+      </div>
+    </a>
+    <a href="#">
+      <div class="product">
+          <img src="shekam.jpg" alt="shekam">
+          <h5>شکم مدل:شکم کد:11</h5>
+      </div>
+  </a>
+    <a href="#">
+      <div class="product">
+        <img src="narges.jpg" alt="narges" loading="lazy">
+        <h5>نرگس مدل:جنده کد98</h5>
+      </div>
+    </a>
+
+    <a href="#">
       <div class="support">
-        <img src="https://icongr.am/feather/phone-call.svg?size=24&color=ffffff"alt="support">
+        <img src="https://icongr.am/feather/phone-call.svg?size=24&color=ffffff"alt="support" loading="lazy">
       </div>
     </a>
   </main>
 
   <footer>
     <p>&copy; 2024 قتل نیوز. تمامی حقوق محفوظ است.</p>
+    <img class="enamad" src="enamad.png" alt="اینماد" style="width: 100px;">
     <p class="fot">
       <a href="#">تلگرام</a> |
       <a href="#">توییتر</a> |

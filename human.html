@@ -123,6 +123,22 @@
       text-shadow: 0 0 5px rgba(255, 69, 0, 0.7);
     }
 
+    .support{
+            position: fixed;
+            bottom: 50px;
+            left: 50px;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            border: solid black 2px;
+        }
+        .support:hover{
+          background-color: #111827;
+        }
+        .support:active{
+          background-color: #111827;
+        }
+
     footer {
       width: 100%;
       text-align: center;
@@ -195,7 +211,7 @@
 <body>
   <header>
     <a href="index.html">
-      <img class="logo" src="logo.png" alt="قتل نیوز">
+      <img class="logo" src="logo.png" alt="قتل نیوز" loading="lazy">
     </a>
   </header>
 
@@ -206,31 +222,42 @@
   </nav>
 
   <main>
-    <h3 style="color: white; margin-bottom: 20px;">جدیدترین محصولات</h3>
+    <h3 style="color: white; margin-bottom: 20px;"> انسان</h3>
     <a href="#">
       <div class="product">
-        <img src="parsa2.jpg" alt="parsa" title="پارسا">
+        <img src="parsa2.jpg" alt="parsa" title="پارسا" loading="lazy">
         <h5>پارسا مدل:shower کد:43kg</h5>
       </div>
     </a>
     <a href="#">
       <div class="product">
-        <img src="nima2.jpg" alt="nima" title="nima">
+        <img src="nima2.jpg" alt="nima" title="nima" loading="lazy">
         <h5>نیما مدل: Zombie کد: 149131</h5>
       </div>
     </a>
     <a href="#">
       <div class="product">
-        <img src="matin.jpg" alt="matin" title="matin">
+        <img src="matin.jpg" alt="matin" title="matin" loading="lazy">
         <h5>متین مدل: Firstday کد: 1402</h5>
       </div>
     </a>
     <a href="#">
       <div class="product">
-        <img src="alikordi4.jpg" alt="alikordi">
+        <img src="alikordi4.jpg" alt="alikordi" loading="lazy">
         <h5>علی کردی مدل: سوءتغذیه کد: 4859</h5>
       </div>
     </a>
+    <a href="#">
+      <div class="product">
+        <img src="narges.jpg" alt="narges" loading="lazy">
+        <h5>نرگس مدل:جنده کد98</h5>
+      </div>
+    </a>
+    <a href="#">
+      <div class="support">
+        <img src="https://icongr.am/feather/phone-call.svg?size=24&color=ffffff"alt="support" loading="lazy">
+      </div>
+    </a>loading="lazy"
   </main>
 
   <footer>

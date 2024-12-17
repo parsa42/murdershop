@@ -123,22 +123,6 @@
       text-shadow: 0 0 5px rgba(255, 69, 0, 0.7);
     }
 
-    .support{
-            position: fixed;
-            bottom: 50px;
-            left: 50px;
-            width: 30px;
-            height: 30px;
-            border-radius: 10px;
-            border: solid black 2px;
-        }
-        .support:hover{
-          background-color: #111827;
-        }
-        .support:active{
-          background-color: #111827;
-        }
-
     footer {
       width: 100%;
       text-align: center;
@@ -159,6 +143,21 @@
       padding: 0 5px;
     }
 
+    .support{
+            position: fixed;
+            bottom: 50px;
+            left: 50px;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            border: solid black 2px;
+        }
+        .support:hover{
+          background-color: #111827;
+        }
+        .support:active{
+          background-color: #111827;
+        }
     /* استایل ریسپانسیو */
     @media (max-width: 1024px) {
       .product {
@@ -218,31 +217,33 @@
   <nav>
     <a href="human.html">انسان</a>
     <a href="arts.html">آثار هنری</a>
+    <a href="#">عجیب غریب</a>
     <a href="murdernews.html">اخبار</a>
   </nav>
 
   <main>
-    <h3 style="color: white; margin-bottom: 20px;">آثار هنری</h3>
+    <h3 style="color: white; margin-bottom: 20px;">عجیب غریب </h3>
     <a href="#">
-      <div class="product">
-        <img src="godarzi2.jpg" alt="godarzi" loading="lazy">
-        <h5>تابلو گودرزی مدل: مونالیزا کد: 174</h5>
-      </div>
+        <div class="product">
+            <img src="shekam.jpg" alt="shekam">
+            <h5>شکم مدل:شکم کد:11</h5>
+        </div>
     </a>
     <a href="#">
-      <div class="support">
-        <img src="https://icongr.am/feather/phone-call.svg?size=24&color=ffffff"alt="support" loading="lazy">
-      </div>
-    </a>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 قتل نیوز. تمامی حقوق محفوظ است.</p>
-        <p>
-            <a href="#">تلگرام</a> |
-            <a href="#">توییتر</a> |
-            <a href="#">اینستاگرام</a>
-        </p>
-  </footer>
-</body>
-</html>
+        <div class="support">
+          <img src="https://icongr.am/feather/phone-call.svg?size=24&color=ffffff"alt="support" loading="lazy">
+        </div>
+      </a>
+    </main>
+  
+    <footer>
+      <p>&copy; 2024 قتل نیوز. تمامی حقوق محفوظ است.</p>
+      <img class="enamad" src="enamad.png" alt="اینماد" style="width: 100px;">
+      <p class="fot">
+        <a href="#">تلگرام</a> |
+        <a href="#">توییتر</a> |
+        <a href="#">اینستاگرام</a>
+      </p>
+    </footer>
+  </body>
+  </html>
