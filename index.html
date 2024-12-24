@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>قتل شاپ</title>
+  <title>قتل شاپ - کریسمس</title>
   <link rel="shortcut icon" href="logo.png">
   <style>
-    /* تنظیمات پایه */
     * {
       font-family: dana;
       box-sizing: border-box;
@@ -26,9 +25,9 @@
       line-height: 1.4;
       text-align: center;
       min-height: 100vh;
-      background: #111827;
+      background: #1a202c url('snow-bg.jpg') no-repeat center center/cover;
       color: #fff;
-      overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+      overflow-x: hidden;
     }
 
     header {
@@ -36,17 +35,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 150px;
+      height: 120px;
       border-bottom-right-radius: 50px;
       border-bottom-left-radius: 50px;
-      background: #242A38;
+      background: #d32f2f;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     }
 
     .logo {
       width: 150px;
       height: auto;
-      box-shadow: 0 0 10px rgba(80, 80, 80, 0.8);
-      margin-bottom: 10px;
     }
 
     nav {
@@ -54,7 +53,7 @@
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
-      margin-top: 0px;
+      margin-top: 10px;
     }
 
     nav a {
@@ -65,7 +64,7 @@
     }
 
     nav a:hover {
-      color: #ff4500;
+      color: #4caf50;
       transform: scale(1.1);
     }
 
@@ -74,15 +73,11 @@
       max-width: 1200px;
       margin: 20px auto;
       padding: 20px;
-      background: #2F4F4F;
+      background-color: rgba(36, 42, 56, 0.9);
       border-radius: 20px;
-      min-height: 600px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
-    a{
-      color: white;
-      text-decoration: none;
-    }
     .product {
       display: inline-block;
       width: calc(25% - 20px);
@@ -107,21 +102,21 @@
 
     .product:hover img {
       transform: rotate(2deg);
-      box-shadow: 0 0 15px #8B0000;
+      box-shadow: 0 0 15px #d32f2f;
     }
 
     .product h5 {
-      margin-top: 10px;
+      margin-top: 0px;
       padding: 10px;
-      background: rgba(17, 24, 39, 0.86);
+      background: rgba(255, 255, 255, 0.1);
       color: #fff;
       border-radius: 0 0 20px 20px;
       transition: color 0.3s;
     }
 
     .product:hover h5 {
-      color: #8B0000;
-      text-shadow: 0 0 5px rgba(255, 69, 0, 0.7);
+      color: #ffcc00;
+      text-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
     }
 
     footer {
@@ -130,7 +125,7 @@
       padding: 20px;
       border-top-right-radius: 50px;
       border-top-left-radius: 50px;
-      background: #2F4F4F;
+      background: #d32f2f;
       color: #fff;
     }
 
@@ -138,28 +133,41 @@
       text-shadow: 2px 2px 10px black;
     }
 
-    span {
-      background: red;
-      border-radius: 5px;
-      padding: 0 5px;
+    .enamad {
+      width: 100px;
+      transition: transform 0.3s;
     }
 
-    .support{
-            position: fixed;
-            bottom: 50px;
-            left: 50px;
-            width: 30px;
-            height: 30px;
-            border-radius: 10px;
-            border: solid black 2px;
-        }
-        .support:hover{
-          background-color: #111827;
-        }
-        .support:active{
-          background-color: #111827;
-        }
-    /* استایل ریسپانسیو */
+    .enamad:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-link a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 5px;
+      transition: color 0.3s;
+    }
+
+    .footer-link a:hover {
+      color: #4caf50;
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10%;
+      width: 30px;
+      height: 30px;
+      background: url('snowflake.png') no-repeat center center/contain;
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
     @media (max-width: 1024px) {
       .product {
         width: calc(33.33% - 20px);
@@ -211,8 +219,9 @@
 <body>
   <header>
     <a href="index.html">
-      <img class="logo" src="logo.png" alt="قتل نیوز" loading="lazy">
+      <img class="logo" src="logo.png" alt="قتل نیوز - کریسمس" loading="lazy">
     </a>
+    <h1>کریسمس مبارک!</h1>
   </header>
 
   <nav>
@@ -223,7 +232,16 @@
   </nav>
 
   <main>
-    <h3 style="color: white; margin-bottom: 20px;">جدیدترین محصولات</h3>
+    <h3 style="color: #ffcc00; margin-bottom: 20px;">جدیدترین محصولات</h3>
+    <div class="snowflake" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="snowflake" style="left: 20%; animation-delay: 1s;"></div>
+    <div class="snowflake" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="snowflake" style="left: 40%; animation-delay: 3s;"></div>
+    <div class="snowflake" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="snowflake" style="left: 60%; animation-delay: 5s;"></div>
+    <div class="snowflake" style="left: 70%; animation-delay: 6s;"></div>
+    <div class="snowflake" style="left: 80%; animation-delay: 7s;"></div>
+
     <a href="#">
       <div class="product">
         <img src="parsa2.jpg" alt="parsa" title="پارسا" loading="lazy">
@@ -266,12 +284,6 @@
           <h5>شکم مدل:شکم کد:11</h5>
       </div>
   </a>
-    <a href="#">
-      <div class="product">
-        <img src="narges.jpg" alt="narges" loading="lazy">
-        <h5>نرگس مدل:جنده کد98</h5>
-      </div>
-    </a>
 
     <a href="#">
       <div class="support">
@@ -281,13 +293,36 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 قتل نیوز. تمامی حقوق محفوظ است.</p>
-    <img class="enamad" src="enamad.png" alt="اینماد" style="width: 100px;">
-    <p class="fot">
-      <a href="#">تلگرام</a> |
-      <a href="#">توییتر</a> |
-      <a href="#">اینستاگرام</a>
-    </p>
+    <p>&copy; 2024 قتل نیوز - کریسمس. تمامی حقوق مفحوظ است.</p>
+    <div>
+      <a href="#">
+        <img class="enamad" src="enamad.png" alt="اینماد">
+      </a>
+    </div>
+    <div class="footer-link">
+      <p>
+        <a href="#">تلگرام</a> |
+        <a href="#">توییتر</a> |
+        <a href="#">اینستاگرام</a>
+      </p>
+    </div>
   </footer>
+  
+<!-- افکت بارش برف -->
+<div class="snow">
+  <!-- 50 دانه برف -->
+  <script>
+    for (let i = 0; i < 50; i++) {
+      const snowflake = document.createElement('div');
+      snowflake.className = 'snowflake';
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+      snowflake.style.opacity = Math.random();
+      snowflake.style.transform = `translateX(${Math.random() * 10 - 5}px)`;
+      document.querySelector('.snow').appendChild(snowflake);
+    }
+  </script>
+</div>
+
 </body>
 </html>
