@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قتل شاپ - پارسا</title>
+  <link rel="shortcut icon" href="logo.png">
+  <style>
+    * {
+      font-family: dana;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: 'dana';
+      src: url('fonts/Dana-bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    body {
+      font-size: 20px;
+      line-height: 1.4;
+      text-align: center;
+      min-height: 100vh;
+      background: #1a202c url('snow-bg.jpg') no-repeat center center/cover;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+      border-bottom-right-radius: 50px;
+      border-bottom-left-radius: 50px;
+      background: #d32f2f;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .product-detail {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 80%;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(36, 42, 56, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .product-detail img {
+      width: 40%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+      margin-left: 20px;
+    }
+
+    .product-info {
+      text-align: right;
+      margin-right: 20px;
+      width: 60%;
+    }
+
+    .product-info h3 {
+      font-size: 30px;
+      color: #ffcc00;
+    }
+
+    .product-info p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    /* طراحی باکس قیمت */
+    .price-box {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .price-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .price-box span {
+      font-size: 28px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .price-box p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      border-top-right-radius: 50px;
+      border-top-left-radius: 50px;
+      background: #d32f2f;
+      color: #fff;
+    }
+
+    footer h5 {
+      text-shadow: 2px 2px 10px black;
+    }
+
+    .footer-link a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 5px;
+      transition: color 0.3s;
+    }
+
+    .footer-link a:hover {
+      color: #4caf50;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img class="logo" src="../logo.png" alt="قتل نیوز - کریسمس" loading="lazy">
+    </a>
+    <h1>جزئیات محصول</h1>
+  </header>
+
+  <div class="product-detail">
+    <!-- تصویر محصول -->
+    <img src="../parsa2.jpg" alt="پارسا" title="پارسا" loading="lazy">
+    
+    <!-- اطلاعات محصول -->
+    <div class="product-info">
+      <h3>پارسا مدل: Shower کد: 43kg</h3>
+      <p>این مدل مخصوص استفاده در محیط‌های داخلی و خارجی است و از بهترین مواد اولیه ساخته شده است.</p>
+      <p>ویژگی‌ها: مقاوم در برابر آب، طراحی ارگونومیک، مناسب برای استفاده طولانی مدت.</p>
+      
+      <!-- باکس قیمت -->
+      <div class="price-box">
+        <span>۵۰۰,۰۰۰ تومان</span>
+        <p>قیمت ویژه و تخفیف برای خریدهای اول</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 قتل نیوز - کریسمس. تمامی حقوق مفحوظ است.</p>
+    <div class="footer-link">
+      <p>
+        <a href="#">تلگرام</a> |
+        <a href="#">توییتر</a> |
+        <a href="#">اینستاگرام</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
