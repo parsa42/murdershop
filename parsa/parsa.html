@@ -48,6 +48,85 @@
       height: auto;
     }
 
+    /* استایل همبرگری */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1100;
+    cursor: pointer;
+    background: #455A64;
+    border-radius: 10%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    background: rgba(211, 47, 47, 1);
+    transform: scale(1.1);
+}
+
+.hamburger-line {
+    width: 70%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger-line:nth-child(1).active {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger-line:nth-child(2).active {
+    opacity: 0;
+}
+
+.hamburger-line:nth-child(3).active {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* استایل Sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #333;
+    padding: 20px 10px;
+    z-index: 1000;
+    border-radius: 0 20px 20px 0;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-link {
+    display: block;
+    margin: 10px 0;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #4caf50;
+}
+
     .product-detail {
       display: flex;
       justify-content: flex-start;
@@ -218,6 +297,25 @@
     <h1>جزئیات محصول</h1>
   </header>
 
+  <nav>
+    <!-- دکمه منوی همبرگری -->
+    <div class="hamburger-menu">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div>
+    
+    <!-- نوار کناری -->
+    <div class="sidebar">
+      <a href="../human.html" class="sidebar-link">انسان</a>
+      <a href="../arts.html" class="sidebar-link">آثار هنری</a>
+      <a href="../bizzare.html" class="sidebar-link">عجیب غریب</a>
+      <a href="../murdernews.html" class="sidebar-link">اخبار</a>
+    </div>
+    
+      </nav>
+    
+
   <div class="product-detail">
     <!-- تصویر محصول -->
     <img src="../parsa2.jpg" alt="پارسا" title="پارسا" loading="lazy">
@@ -246,6 +344,24 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    // باز و بسته کردن منوی همبرگری
+    function toggleMenu() {
+  const sidebar = document.querySelector('.sidebar');
+  const lines = document.querySelectorAll('.hamburger-line');
+
+  // تغییر وضعیت منوی جانبی
+  sidebar.classList.toggle('active');
+
+  // تغییر وضعیت انیمیشن خطوط
+  lines.forEach(line => line.classList.toggle('active'));
+}
+
+// افزودن رویداد کلیک به منوی همبرگری
+document.querySelector('.hamburger-menu').addEventListener('click', toggleMenu);
+
+  </script>
 
 </body>
 </html>
