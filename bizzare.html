@@ -6,292 +6,299 @@
   <title>قتل شاپ</title>
   <link rel="shortcut icon" href="logo.png">
   <style>
-    /* تنظیمات پایه */
     * {
-      font-family: dana;
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+        font-family: dana;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
-
+    
     @font-face {
-      font-family: 'dana';
-      src: url('fonts/Dana-bold.woff2') format('woff2');
-      font-weight: bold;
-      font-style: normal;
+        font-family: 'dana';
+        src: url('fonts/Dana-bold.woff2') format('woff2');
+        font-weight: bold;
+        font-style: normal;
     }
-
+    
     body {
-      font-size: 20px;
-      line-height: 1.4;
-      text-align: center;
-      min-height: 100vh;
-      background: #1a202c url('snow-bg.jpg') no-repeat center center/cover;
-      color: #fff;
-      overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+        font-size: 20px;
+        line-height: 1.4;
+        text-align: center;
+        min-height: 100vh;
+        background: #1a202c url('snow-bg.jpg') no-repeat center center/cover;
+        color: #fff;
+        overflow-x: hidden;
+        margin-left: 0;
+        transition: margin-left 0.3s ease;
     }
-
+    
     header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 120px;
-      border-bottom-right-radius: 50px;
-      border-bottom-left-radius: 50px;
-      background: #d32f2f;
-      color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    .logo {
-      width: 150px;
-      height: auto;
-    }
-/* استایل همبرگری */
-.hamburger-menu {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1100;
-    cursor: pointer;
-    background: #455A64;
-    border-radius: 10%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.hamburger-menu:hover {
-    background: rgba(211, 47, 47, 1);
-    transform: scale(1.1);
-}
-
-.hamburger-line {
-    width: 70%;
-    height: 4px;
-    background-color: #fff;
-    border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hamburger-line:nth-child(1).active {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.hamburger-line:nth-child(2).active {
-    opacity: 0;
-}
-
-.hamburger-line:nth-child(3).active {
-    transform: translateY(-10px) rotate(-45deg);
-}
-
-/* استایل Sidebar */
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background-color: #333;
-    padding: 20px 10px;
-    z-index: 1000;
-    border-radius: 0 20px 20px 0;
-    transition: left 0.3s ease;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.sidebar.active {
-    right: 0;
-}
-
-.sidebar-link {
-    display: block;
-    margin: 10px 0;
-    color: #fff;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.sidebar-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #4caf50;
-}
-
-    main {
-      width: 90%;
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: rgba(36, 42, 56, 0.9);
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .product {
-      display: inline-block;
-      width: calc(25% - 20px);
-      margin: 10px;
-      vertical-align: top;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 0px 0px 20px 20px;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    .product img {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-      transition: transform 0.3s ease;
-    }
-
-    .product:hover img {
-      transform: rotate(2deg);
-      box-shadow: 0 0 15px #d32f2f;
-    }
-
-    .product h5 {
-      margin-top: 10px;
-      padding: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      border-radius: 0 0 20px 20px;
-      transition: color 0.3s;
-    }
-
-    .product:hover h5 {
-      color: #ffcc00;
-      text-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
-    }
-
-    footer {
-      width: 100%;
-      text-align: center;
-      padding: 20px;
-      border-top-right-radius: 50px;
-      border-top-left-radius: 50px;
-      background: #d32f2f;
-      color: #fff;
-    }
-
-    footer h5 {
-      text-shadow: 2px 2px 10px black;
-    }
-
-    .support {
-      position: fixed;
-      bottom: 50px;
-      left: 50px;
-      width: 30px;
-      height: 30px;
-      border-radius: 10px;
-      border: solid black 2px;
-      background-color: #242A38;
-    }
-
-    .support:hover {
-      background-color: #111827;
-    }
-
-    /* افکت بارش برف */
-    .snow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1000;
-    }
-
-    .snowflake {
-      position: absolute;
-      top: -10px;
-      width: 10px;
-      height: 10px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-10px);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
-    }
-
-    @media (max-width: 1024px) {
-      .product {
-        width: calc(33.33% - 20px);
-      }
-
-      nav a {
-        font-size: 18px;
-      }
-
-      .logo {
-        width: 130px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .product {
-        width: calc(50% - 20px);
-      }
-
-      nav a {
-        font-size: 16px;
-      }
-
-      .logo {
-        width: 120px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .product {
-        width: 100%;
-      }
-
-      .logo {
-        width: 100px;
-      }
-
-      nav {
+        display: flex;
         flex-direction: column;
-        gap: 15px;
-      }
-
-      nav a {
-        font-size: 14px;
-      }
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        background: #d32f2f;
+        color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     }
-  </style>
+    
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+    
+    nav a {
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+        transition: color 0.3s, transform 0.3s;
+    }
+    
+    nav a:hover {
+        color: #4caf50;
+        transform: scale(1.1);
+    }
+    
+    main {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(36, 42, 56, 0.9);
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .product {
+        display: inline-block;
+        width: calc(25% - 20px); /* چهار محصول در دسکتاپ */
+        margin: 10px;
+        vertical-align: top;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 0px 0px 20px 20px;
+    }
+    
+    .product:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    }
+    
+    .product img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s ease;
+    }
+    
+    .product:hover img {
+        transform: rotate(2deg);
+        box-shadow: 0 0 15px #d32f2f;
+    }
+    
+    .product h5 {
+        margin-top: 0px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 0 0 20px 20px;
+        transition: color 0.3s;
+    }
+    
+    .product:hover h5 {
+        color: #ffcc00;
+        text-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+    }
+    
+    footer {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        border-top-right-radius: 50px;
+        border-top-left-radius: 50px;
+        background: #d32f2f;
+        color: #fff;
+    }
+    
+    footer h5 {
+        text-shadow: 2px 2px 10px black;
+    }
+    
+    .enamad {
+        width: 100px;
+        transition: transform 0.3s;
+    }
+    
+    .enamad:hover {
+        transform: scale(1.1);
+    }
+    
+    .footer-link a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 5px;
+        transition: color 0.3s;
+    }
+    
+    .footer-link a:hover {
+        color: #4caf50;
+    }
+    
+    /* استایل همبرگری */
+    .hamburger-menu {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1100;
+        cursor: pointer;
+        background: #455A64;
+        border-radius: 10%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .hamburger-menu:hover {
+        background: rgba(211, 47, 47, 1);
+        transform: scale(1.1);
+    }
+    
+    .hamburger-line {
+        width: 70%;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .hamburger-line:nth-child(1).active {
+        transform: translateY(10px) rotate(45deg);
+    }
+    
+    .hamburger-line:nth-child(2).active {
+        opacity: 0;
+    }
+    
+    .hamburger-line:nth-child(3).active {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+    
+    /* استایل Sidebar */
+    .sidebar {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        background-color: #333;
+        padding: 20px 10px;
+        z-index: 1000;
+        border-radius: 0 20px 20px 0;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .sidebar.active {
+        right: 0;
+    }
+    
+    .sidebar-link {
+        display: block;
+        margin: 10px 0;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    
+    .sidebar-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #4caf50;
+    }
+    /* استایل دکمه حساب کاربری */
+    .account-button {
+      position: fixed;
+      top: 20px;
+      left: 20px; /* فاصله از گوشه سمت چپ */
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1100;
+      border-radius: 50%;
+      background-color: #fafafa;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .account-button:hover {
+      background: rgba(211, 47, 47, 1);
+      transform: scale(1.1);
+    }
+    
+    .account-button img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    /* استایل دکمه سبد خرید */
+    .cart-button {
+      position: fixed;
+      top: 20px;
+      left: 80px; /* فاصله از دکمه حساب کاربری */
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1100;
+      background-color: #fafafa;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .cart-button:hover {
+      transform: scale(1.1);
+    }
+    
+    .cart-button img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    /* استایل‌های ریسپانسیو */
+    @media (max-width: 768px) {
+        .product {
+            width: calc(50% - 20px); /* دو محصول در هر ردیف */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .product {
+            width: calc(50% - 20px); /* همچنان دو محصول در هر ردیف */
+        }
+    }
+      </style>
 </head>
 <body>
   <header>
