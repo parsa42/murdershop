@@ -233,6 +233,58 @@ footer h5 {
     background: rgba(255, 255, 255, 0.2);
     color: #4caf50;
 }
+/* استایل دکمه حساب کاربری */
+.account-button {
+  position: fixed;
+  top: 20px;
+  left: 20px; /* فاصله از گوشه سمت چپ */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  border-radius: 50%;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.account-button:hover {
+  background: rgba(211, 47, 47, 1);
+  transform: scale(1.1);
+}
+
+.account-button img {
+  width: 40px;
+  height: 40px;
+}
+
+/* استایل دکمه سبد خرید */
+.cart-button {
+  position: fixed;
+  top: 20px;
+  left: 80px; /* فاصله از دکمه حساب کاربری */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  background-color: #fafafa;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-button:hover {
+  transform: scale(1.1);
+}
+
+.cart-button img {
+  width: 40px;
+  height: 40px;
+}
 
 /* استایل‌های ریسپانسیو */
 @media (max-width: 768px) {
@@ -249,6 +301,13 @@ footer h5 {
   </style>
 </head>
 <body>
+<!-- دکمه حساب کاربری -->
+<div class="account-button">
+  <a href="account/account.html">
+    <img src="profile-user.png" alt="حساب کاربری" title="حساب کاربری" />
+  </a>
+</div>
+
 <!-- دکمه منوی همبرگری -->
 <div class="hamburger-menu">
   <div class="hamburger-line"></div>
@@ -256,9 +315,16 @@ footer h5 {
   <div class="hamburger-line"></div>
 </div>
 
+<!-- دکمه سبد خرید -->
+<div class="cart-button">
+  <a href="shopping cart/shoppingcart.html">
+    <img src="shopping-cart.png" alt="سبد خرید" title="سبد خرید" />
+  </a>
+</div>
+
+
 <!-- نوار کناری -->
 <div class="sidebar">
-  <a href="account.html" class="sidebar-link">حساب کاربری</a>
   <a href="human.html" class="sidebar-link">انسان</a>
   <a href="arts.html" class="sidebar-link">آثار هنری</a>
   <a href="bizzare.html" class="sidebar-link">عجیب غریب</a>
@@ -275,17 +341,19 @@ footer h5 {
 
   <main>
     <h3 style="color: #ffcc00; margin-bottom: 20px;">جدیدترین محصولات</h3>
-    <div class="product">
-      <img src="parsa2.jpg" alt="parsa" title="پارسا" loading="lazy">
-      <h5>پارسا مدل:shower کد:43kg</h5>
-    </div>
-    <a href="#">
+    <a href="parsa/parsa.html">
+      <div class="product">
+        <img src="parsa2.jpg" alt="parsa" title="پارسا" loading="lazy">
+        <h5>پارسا مدل:shower کد:43kg</h5>
+      </div>
+    </a>
+    <a href="nima/nima.html">
       <div class="product">
         <img src="nima2.jpg" alt="nima" title="nima" loading="lazy">
         <h5>نیما مدل: Zombie کد: 149131</h5>
       </div>
     </a>
-    <a href="#">
+    <a href="matin/matin.html">
       <div class="product">
         <img src="matin.jpg" alt="matin" title="matin" loading="lazy">
         <h5>متین مدل: Firstday کد: 1402</h5>

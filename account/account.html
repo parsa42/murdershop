@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حساب کاربری</title>
+  <link rel="shortcut icon" href="logo.png">
+  <style>
+    * {
+      font-family: dana;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: 'dana';
+      src: url('fonts/Dana-bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    body {
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: center;
+      background: #1a202c url('snow-bg.jpg') no-repeat center center/cover;
+      color: #fff;
+      margin: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #d32f2f;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    header .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    header a:hover {
+      color: #ffcc00;
+    }
+
+    main {
+      width: 90%;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(36, 42, 56, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      text-align: left;
+    }
+
+    main h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    .user-info, .change-password, .order-list {
+      margin-bottom: 30px;
+    }
+
+    .user-info h2, .change-password h2, .order-list h2 {
+      margin-bottom: 10px;
+      color: #4caf50;
+    }
+
+    .info-row, .order-item {
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .order-item span {
+      margin-left: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4caf50;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">
+      <img class="logo" src="../logo.png" alt="قتل نیوز">
+    </a>
+    <a href="cart.html">سبد خرید</a>
+  </header>
+
+  <main>
+    <h1>حساب کاربری</h1>
+
+    <!-- اطلاعات کاربر -->
+    <section class="user-info">
+      <h2>اطلاعات کاربری</h2>
+      <div class="info-row">نام: علی کُردی</div>
+      <div class="info-row">ایمیل: ali@example.com</div>
+      <div class="info-row">تلفن: 09121234567</div>
+    </section>
+
+    <!-- تغییر رمز عبور -->
+    <section class="change-password">
+      <h2>تغییر رمز عبور</h2>
+      <form>
+        <div class="info-row">
+          <label for="current-password">رمز فعلی:</label><br>
+          <input type="password" id="current-password" name="current-password" required>
+        </div>
+        <div class="info-row">
+          <label for="new-password">رمز جدید:</label><br>
+          <input type="password" id="new-password" name="new-password" required>
+        </div>
+        <div class="info-row">
+          <label for="confirm-password">تأیید رمز جدید:</label><br>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit" class="btn">ذخیره تغییرات</button>
+      </form>
+    </section>
+
+    <!-- لیست سفارشات -->
+    <section class="order-list">
+      <h2>لیست سفارشات</h2>
+      <div class="order-item">
+        <span>سفارش ۱: پارسا مدل Shower - کد 43kg</span>
+        <span>وضعیت: تکمیل شده</span>
+      </div>
+      <div class="order-item">
+        <span>سفارش ۲: نیما مدل Zombie - کد 149131</span>
+        <span>وضعیت: در حال پردازش</span>
+      </div>
+      <div class="order-item">
+        <span>سفارش ۳: متین مدل Firstday - کد 1402</span>
+        <span>وضعیت: ارسال شده</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

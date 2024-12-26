@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پرداخت شاپرک</title>
+  <link rel="shortcut icon" href="logo.png">
+  <style>
+    * {
+      font-family: dana;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: 'dana';
+      src: url('fonts/Dana-bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    body {
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: center;
+      background: #1a202c url('payment-bg.jpg') no-repeat center center/cover;
+      color: #fff;
+      margin: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      background: #d32f2f;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    header .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    main {
+      width: 90%;
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(36, 42, 56, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    main h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      text-align: right;
+      color: #fff;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 4px 15px rgba(0, 255, 0, 0.5);
+    }
+
+    .pay-btn {
+      padding: 10px 20px;
+      background: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+
+    .pay-btn:hover {
+      background: #388e3c;
+    }
+
+    .total-price {
+      text-align: center;
+      margin: 15px 0;
+      font-size: 20px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img class="logo" src="shaparak-logo.png" alt="شاپرک">
+    </a>
+  </header>
+
+  <main>
+    <h1>پرداخت شاپرک</h1>
+
+    <div class="total-price">مبلغ قابل پرداخت: 1,620,000 تومان</div>
+
+    <form action="success.html" method="post">
+      <label for="card-number">شماره کارت</label>
+      <input type="text" id="card-number" name="card-number" placeholder="مثال: 1234-5678-9101-1121" required maxlength="19">
+
+      <label for="cvv2">CVV2</label>
+      <input type="text" id="cvv2" name="cvv2" placeholder="مثال: 123" required maxlength="4">
+
+      <label for="exp-date">تاریخ انقضاء</label>
+      <input type="text" id="exp-date" name="exp-date" placeholder="مثال: 01/1403" required>
+
+      <label for="pin">رمز دوم</label>
+      <input type="password" id="pin" name="pin" placeholder="رمز پویا یا ایستا" required>
+
+      <a href="success.html">
+        <div>
+            <button type="submit" class="pay-btn">پرداخت</button>
+      </div>
+      </a>
+    </form>
+  </main>
+</body>
+</html>

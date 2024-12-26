@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سبد خرید</title>
+  <link rel="shortcut icon" href="logo.png">
+  <style>
+    * {
+      font-family: dana;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @font-face {
+      font-family: 'dana';
+      src: url('fonts/Dana-bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    body {
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: center;
+      background: #1a202c url('snow-bg.jpg') no-repeat center center/cover;
+      color: #fff;
+      margin: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #d32f2f;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    header .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    header a:hover {
+      color: #ffcc00;
+    }
+
+    main {
+      width: 90%;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(36, 42, 56, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    main h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      margin-left: 10px;
+    }
+
+    .cart-item-details {
+      flex: 1;
+      text-align: left;
+    }
+
+    .cart-item-details h2 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #4caf50;
+    }
+
+    .cart-item-details p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .cart-item-price {
+      font-size: 18px;
+      color: #ffcc00;
+    }
+
+    .remove-btn {
+      background: #d32f2f;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .remove-btn:hover {
+      background: #b71c1c;
+    }
+
+    .cart-total {
+      text-align: right;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #4caf50;
+    }
+
+    .checkout-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4caf50;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .checkout-btn:hover {
+      background: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img class="logo" src="../logo.png" alt="قتل نیوز">
+    </a>
+    <a href="../account/account.html">حساب کاربری</a>
+  </header>
+
+  <main>
+    <h1>سبد خرید</h1>
+
+    <!-- آیتم‌های سبد خرید -->
+    <div class="cart-item">
+      <img src="../parsa2.jpg" alt="پارسا">
+      <div class="cart-item-details">
+        <h2>پارسا مدل: Shower</h2>
+        <p>کد: 43kg</p>
+      </div>
+      <div class="cart-item-price">450,000 تومان</div>
+      <button class="remove-btn">حذف</button>
+    </div>
+
+    <div class="cart-item">
+      <img src="../nima2.jpg" alt="نیما">
+      <div class="cart-item-details">
+        <h2>نیما مدل: Zombie</h2>
+        <p>کد: 149131</p>
+      </div>
+      <div class="cart-item-price">850,000 تومان</div>
+      <button class="remove-btn">حذف</button>
+    </div>
+
+    <div class="cart-item">
+      <img src="../matin.jpg" alt="متین">
+      <div class="cart-item-details">
+        <h2>متین مدل: Firstday</h2>
+        <p>کد: 1402</p>
+      </div>
+      <div class="cart-item-price">320,000 تومان</div>
+      <button class="remove-btn">حذف</button>
+    </div>
+
+    <!-- جمع کل -->
+    <div class="cart-total">جمع کل: 1,620,000 تومان</div>
+    <a href="checkout.html" class="checkout-btn">ادامه به پرداخت</a>
+  </main>
+</body>
+</html>
