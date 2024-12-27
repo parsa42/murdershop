@@ -6,417 +6,278 @@
   <title>قتل شاپ - کریسمس</title>
   <link rel="shortcut icon" href="logo.png">
   <style>
-* {
-    font-family: dana;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-@font-face {
-    font-family: 'dana';
-    src: url('fonts/Dana-bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
-
-body {
-    font-size: 20px;
-    line-height: 1.4;
-    text-align: center;
-    min-height: 100vh;
-    background: #1a202c url('snow-bg.jpg') no-repeat center center/cover;
-    color: #fff;
-    overflow-x: hidden;
-    margin-left: 0;
-    transition: margin-left 0.3s ease;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    background: #d32f2f;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-.logo {
-    width: 150px;
-    height: auto;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-nav a {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-    transition: color 0.3s, transform 0.3s;
-}
-
-nav a:hover {
-    color: #4caf50;
-    transform: scale(1.1);
-}
-
-main {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(36, 42, 56, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.product {
-    display: inline-block;
-    width: calc(25% - 20px); /* چهار محصول در دسکتاپ */
-    margin: 10px;
-    vertical-align: top;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 0px 0px 20px 20px;
-}
-
-.product:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-}
-
-.product img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease;
-}
-
-.product:hover img {
-    transform: rotate(2deg);
-    box-shadow: 0 0 15px #d32f2f;
-}
-
-.product h5 {
-    margin-top: 0px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border-radius: 0 0 20px 20px;
-    transition: color 0.3s;
-}
-
-.product:hover h5 {
-    color: #ffcc00;
-    text-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
-}
-
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
-    background: #d32f2f;
-    color: #fff;
-}
-
-footer h5 {
-    text-shadow: 2px 2px 10px black;
-}
-
-.enamad {
-    width: 100px;
-    transition: transform 0.3s;
-}
-
-.enamad:hover {
-    transform: scale(1.1);
-}
-
-.footer-link a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 5px;
-    transition: color 0.3s;
-}
-
-.footer-link a:hover {
-    color: #4caf50;
-}
-
-/* استایل همبرگری */
-.hamburger-menu {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1100;
-    cursor: pointer;
-    background: #455A64;
-    border-radius: 10%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.hamburger-menu:hover {
-    background: rgba(211, 47, 47, 1);
-    transform: scale(1.1);
-}
-
-.hamburger-line {
-    width: 70%;
-    height: 4px;
-    background-color: #fff;
-    border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hamburger-line:nth-child(1).active {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.hamburger-line:nth-child(2).active {
-    opacity: 0;
-}
-
-.hamburger-line:nth-child(3).active {
-    transform: translateY(-10px) rotate(-45deg);
-}
-
-/* استایل Sidebar */
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background-color: #333;
-    padding: 20px 10px;
-    z-index: 1000;
-    border-radius: 0 20px 20px 0;
-    transition: left 0.3s ease;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.sidebar.active {
-    right: 0;
-}
-
-.sidebar-link {
-    display: block;
-    margin: 10px 0;
-    color: #fff;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.sidebar-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #4caf50;
-}
-/* استایل دکمه حساب کاربری */
-.account-button {
-  position: fixed;
-  top: 20px;
-  left: 20px; /* فاصله از گوشه سمت چپ */
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1100;
-  border-radius: 50%;
-  background-color: #fafafa;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.account-button:hover {
-  background: rgba(211, 47, 47, 1);
-  transform: scale(1.1);
-}
-
-.account-button img {
-  width: 40px;
-  height: 40px;
-}
-
-/* استایل دکمه سبد خرید */
-.cart-button {
-  position: fixed;
-  top: 20px;
-  left: 80px; /* فاصله از دکمه حساب کاربری */
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1100;
-  background-color: #fafafa;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cart-button:hover {
-  transform: scale(1.1);
-}
-
-.cart-button img {
-  width: 40px;
-  height: 40px;
-}
-
-/* استایل‌های ریسپانسیو */
-@media (max-width: 768px) {
-    .product {
-        width: calc(50% - 20px); /* دو محصول در هر ردیف */
+    @font-face {
+      font-family: "shabnam";
+      src: url("../fonts/Shabnam-FD.woff2") format("woff2");
     }
-}
 
-@media (max-width: 480px) {
-    .product {
-        width: calc(50% - 20px); /* همچنان دو محصول در هر ردیف */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-}
+
+    body {
+      font-family: "shabnam", sans-serif;
+      background: #f2f2f2;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #ff7043;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      border-bottom: 3px solid #ff5722;
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #2c3e50;
+      padding: 12px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 25px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .about-us {
+      background-color: #ff5722;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .about-image {
+      width: 40%;
+      max-height: 80%;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    .about-text {
+      width: 50%;
+      text-align: right;
+    }
+
+    .about-text h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .container {
+      width: 1216px;
+      margin: 56px auto;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .section__title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section__title-icon {
+      width: 22px;
+      height: 22px;
+      color: #1E88E5;
+    }
+
+    .section__link {
+      color: #1E88E5;
+      text-decoration: none;
+    }
+
+    .row {
+      display: flex;
+      gap: 24px;
+    }
+
+    .product {
+      width: 280px;
+      padding: 24px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .product__image {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product__name {
+      font-size: 14px;
+      margin-top: 14px;
+    }
+
+    .product__offer {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .product__offer-percent {
+      background-color: #E3F2FD;
+      color: #1976D2;
+      font-size: 14px;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .product__wrapper {
+      margin-top: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
   </style>
 </head>
 <body>
-<!-- دکمه حساب کاربری -->
-<div class="account-button">
-  <a href="account/account.html">
-    <img src="profile-user.png" alt="حساب کاربری" title="حساب کاربری" />
-  </a>
-</div>
-
-<!-- دکمه منوی همبرگری -->
-<div class="hamburger-menu">
-  <div class="hamburger-line"></div>
-  <div class="hamburger-line"></div>
-  <div class="hamburger-line"></div>
-</div>
-
-<!-- دکمه سبد خرید -->
-<div class="cart-button">
-  <a href="shopping cart/shoppingcart.html">
-    <img src="shopping-cart.png" alt="سبد خرید" title="سبد خرید" />
-  </a>
-</div>
-
-
-<!-- نوار کناری -->
-<div class="sidebar">
-  <a href="human.html" class="sidebar-link">انسان</a>
-  <a href="arts.html" class="sidebar-link">آثار هنری</a>
-  <a href="bizzare.html" class="sidebar-link">عجیب غریب</a>
-  <a href="murdernews.html" class="sidebar-link">اخبار</a>
-</div>
-
-
   <header>
-    <a href="index.html">
-      <img class="logo" src="logo.png" alt="قتل نیوز - کریسمس" loading="lazy">
-    </a>
+    <img src="logo.png" alt="قتل نیوز">
     <h1>کریسمس مبارک!</h1>
   </header>
 
+  <nav>
+    <a href="index.html">صفحه اصلی</a>
+    <a href="about.html">درباره ما</a>
+    <a href="products.html">محصولات</a>
+    <a href="contact.html">تماس با ما</a>
+  </nav>
+
   <main>
-    <h3 style="color: #ffcc00; margin-bottom: 20px;">جدیدترین محصولات</h3>
-    <a href="parsa/parsa.html">
-      <div class="product">
-        <img src="parsa2.jpg" alt="parsa" title="پارسا" loading="lazy">
-        <h5>پارسا مدل:shower کد:43kg</h5>
+    <section class="about-us">
+      <div class="about-content">
+        <img src="godarzi22.png" alt="تصویر درباره ما" class="about-image">
+        <div class="about-text">
+          <h2>درباره ما</h2>
+          <p>ما در قتل نیوز تلاش می‌کنیم بهترین تجربه‌ها را برای شما فراهم کنیم.</p>
+        </div>
       </div>
-    </a>
-    <a href="nima/nima.html">
-      <div class="product">
-        <img src="nima2.jpg" alt="nima" title="nima" loading="lazy">
-        <h5>نیما مدل: Zombie کد: 149131</h5>
-      </div>
-    </a>
-    <a href="matin/matin.html">
-      <div class="product">
-        <img src="matin.jpg" alt="matin" title="matin" loading="lazy">
-        <h5>متین مدل: Firstday کد: 1402</h5>
-      </div>
-    </a>
-    <a href="alikordi/alikordi.html">
-      <div class="product">
-        <img src="alikordi4.jpg" alt="alikordi" loading="lazy">
-        <h5>علی کردی مدل: سوءتغذیه کد: 4859</h5>
-      </div>
-    </a>
-    <a href="hadichopan/hadichopan.html">
-      <div class="product">
-        <img src="hadichopan.jpg" alt="hadichopan" loading="lazy">
-        <h5> هادی چوپان مدل:عربده کد:56 </h5>
-      </div>
-    </a>
-    <a href="#">
-      <div class="product">
-          <img src="shekam.jpg" alt="shekam">
-          <h5>شکم مدل:شکم کد:11</h5>
-      </div>
-  </a>
-  <a href="#">
+    </section>
+
+<div class="container">
+  <div class="section-head">
+    <h3 class="section__title">
+      <svg class="section__title-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M20.03 4.72a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 11.69l6.97-6.97a.75.75 0 011.06 0zm0 6a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 111.06-1.06L12 17.69l6.97-6.97a.75.75 0 011.06 0z" clip-rule="evenodd" />
+      </svg>
+      جدیدترین محصولات
+    </h3>
+    <a href="#" class="section__link">نمایش همه</a>
+  </div>
+  <div class="row">
     <div class="product">
-      <img src="godarzi2.jpg" alt="godarzi" loading="lazy">
-      <h5>تابلو گودرزی مدل: مونالیزا کد: 174</h5>
+      <img class="product__image" src="parsa2.jpg" alt="پارسا">
+      <h4 class="product__name">
+        <a href="#" class="product__link">پارسا مدل: shower کد: 43kg</a>
+      </h4>
+      <div class="product__offer">
+        <span class="product__offer-percent">20%</span>
+        <span class="product__offer-price">400,000 تومان</span>
+      </div>
+      <div class="product__wrapper">
+        <div class="product__price">320,000 تومان</div>
+      </div>
     </div>
-  </a>
+
+    <div class="product">
+      <img class="product__image" src="nima2.jpg" alt="نیما">
+      <h4 class="product__name">
+        <a href="#" class="product__link">نیما مدل: Zombie کد: 149131</a>
+      </h4>
+      <div class="product__offer">
+        <span class="product__offer-percent">15%</span>
+        <span class="product__offer-price">500,000 تومان</span>
+      </div>
+      <div class="product__wrapper">
+        <div class="product__price">425,000 تومان</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img class="product__image" src="matin.jpg" alt="متین">
+      <h4 class="product__name">
+        <a href="#" class="product__link">متین مدل: Firstday کد: 1402</a>
+      </h4>
+      <div class="product__offer">
+        <span class="product__offer-percent">10%</span>
+        <span class="product__offer-price">300,000 تومان</span>
+      </div>
+      <div class="product__wrapper">
+        <div class="product__price">270,000 تومان</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img class="product__image" src="alikordi4.jpg" alt="علی کردی">
+      <h4 class="product__name">
+        <a href="#" class="product__link">علی کردی مدل: سوءتغذیه کد: 4859</a>
+      </h4>
+      <div class="product__offer">
+        <span class="product__offer-percent">25%</span>
+        <span class="product__offer-price">600,000 تومان</span>
+      </div>
+      <div class="product__wrapper">
+        <div class="product__price">450,000 تومان</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img class="product__image" src="hadichopan.jpg" alt="هادی چوپان">
+      <h4 class="product__name">
+        <a href="#" class="product__link">هادی چوپان مدل: عربده کد: 86</a>
+      </h4>
+      <div class="product__offer">
+        <span class="product__offer-percent">30%</span>
+        <span class="product__offer-price">700,000 تومان</span>
+      </div>
+      <div class="product__wrapper">
+        <div class="product__price">490,000 تومان</div>
+      </div>
+    </div>
+  </div>
+</div>
+
   </main>
-
-  <footer>
-    <p>&copy; 2024 قتل نیوز - کریسمس. تمامی حقوق مفحوظ است.</p>
-    <div>
-      <a href="#">
-        <img class="enamad" src="enamad.png" alt="اینماد">
-      </a>
-    </div>
-    <div class="footer-link">
-      <p>
-        <a href="#">تلگرام</a> |
-        <a href="#">توییتر</a> |
-        <a href="#">اینستاگرام</a>
-      </p>
-    </div>
-  </footer>
-
-  <script>
-// باز و بسته کردن منوی همبرگری
-function toggleMenu() {
-    const sidebar = document.querySelector('.sidebar');
-    const lines = document.querySelectorAll('.hamburger-line');
-
-    // تغییر وضعیت منوی جانبی
-    sidebar.classList.toggle('active');
-
-    // تغییر وضعیت انیمیشن خطوط
-    lines.forEach(line => line.classList.toggle('active'));
-}
-
-// افزودن رویداد کلیک به منوی همبرگری
-document.querySelector('.hamburger-menu').addEventListener('click', toggleMenu);
-
-  </script>
 </body>
 </html>
