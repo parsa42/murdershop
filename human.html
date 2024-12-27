@@ -122,6 +122,49 @@
       font-size: 1.2rem;
     }
 
+    /* بخش درباره ما */
+.about-us {
+  background-color: #ff5722; /* رنگ پس‌زمینه */
+  color: white; /* رنگ متن */
+  display: flex;
+  justify-content: center; /* مرکزیت افقی */
+  align-items: center; /* مرکزیت عمودی */
+  padding: 0 20px;
+  margin-bottom: 50px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.about-image {
+  width: 40%; /* عرض تصویر */
+  max-height: 80%; /* جلوگیری از تجاوز تصویر از ارتفاع */
+  object-fit: cover; /* تناسب تصویر */
+}
+
+.about-text {
+  width: 50%; /* عرض متن */
+  padding: 20px;
+  text-align: right;
+}
+
+.about-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
     footer {
       background-color: #2c3e50;
       color: white;
@@ -227,7 +270,23 @@
   </nav>
 
   <main>
-      <h3>جدیدترین محصولات</h3>
+    <!-- درباره ما -->
+    <section class="about-us">
+      <div class="about-content">
+        <img src="alikordi44.jpg" alt="تصویر مربوط به سایت" class="about-image">
+        <div class="about-text">
+          <h2>انسان</h2>
+          <p>
+          بخش "انسان" در قتل نیوز، تلاش دارد تا زوایای ناشناخته و داستان‌های جذاب پیرامون افراد برجسته، عادی، یا حتی ناشناخته را به شما معرفی کند. 
+          این بخش شامل روایت‌های شگفت‌انگیز، تحلیل‌های اجتماعی، و نگاهی نو به مفهوم انسانیت در دنیای امروز است.
+          </p>
+          <p>
+            از چهره‌های تاریخی گرفته تا افراد الهام‌بخش معاصر، هدف ما ایجاد فضایی برای شناخت بیشتر و عمیق‌تر درباره انسان‌هاست.
+          </p>
+        </div>
+      </div>
+    </section>
+    <h3>انسان</h3>
     <div class="products">
       <a href="parsa/parsa.html">
         <div class="product">
@@ -249,7 +308,7 @@
       </a>
       <a href="alikordi/alikordi.html">
         <div class="product">
-          <img src="alikordi4.jpg" alt="علی کردی">
+          <img src="alikordi4.png" alt="علی کردی">
           <h5>علی کردی مدل: سوءتغذیه کد: 4859</h5>
         </div>
       </a>
@@ -271,11 +330,5 @@
     </div>
   </footer>
 
-  <script>
-    function toggleSidebar() {
-      document.querySelector('.sidebar').classList.toggle('active');
-      document.querySelector('.hamburger-menu').classList.toggle('active');
-    }
-  </script>
 </body>
 </html>

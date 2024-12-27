@@ -85,53 +85,9 @@
       text-transform: uppercase;
     }
 
-/* بخش درباره ما */
-.about-us {
-  background-color: #ff5722; /* رنگ پس‌زمینه */
-  color: white; /* رنگ متن */
-  display: flex;
-  justify-content: center; /* مرکزیت افقی */
-  align-items: center; /* مرکزیت عمودی */
-  padding: 0 20px;
-  margin-bottom: 50px;
-}
-
-.about-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-}
-
-.about-image {
-  width: 40%; /* عرض تصویر */
-  max-height: 80%; /* جلوگیری از تجاوز تصویر از ارتفاع */
-  border-radius: 15px; /* گوشه‌های گرد */
-  object-fit: cover; /* تناسب تصویر */
-}
-
-.about-text {
-  width: 50%; /* عرض متن */
-  padding: 20px;
-  text-align: right;
-}
-
-.about-text h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.about-text p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-
     .products {
       display: flex;
-      overflow-x: auto;
+      flex-wrap: wrap;
       gap: 25px;
       padding-bottom: 10px;
     }
@@ -229,8 +185,6 @@
       height: 25px;
       cursor: pointer;
       z-index: 1100;
-      margin-left: 330px;
-      margin-top: 100px;
     }
 
     .hamburger-menu div {
@@ -238,6 +192,7 @@
       background-color: #fff;
       border-radius: 5px;
     }
+
 
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -252,26 +207,21 @@
       }
     }
 
-    @media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image {
-    width: 80%; /* تصویر تمام‌عرض در حالت موبایل */
-    margin-bottom: 20px;
-  }
-
-  .about-text {
-    width: 100%;
-  }
-}
-
-
   </style>
 </head>
 <body>
+  <div class="hamburger-menu" onclick="toggleSidebar()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="sidebar">
+    <a href="human.html">انسان</a>
+    <a href="arts.html">آثار هنری</a>
+    <a href="bizarre.html">عجیب غریب</a>
+    <a href="news.html">اخبار</a>
+  </div>
 
   <header>
     <img src="logo.png" alt="قتل نیوز - کریسمس">
@@ -280,65 +230,33 @@
 
   <nav>
     <a href="index.html">صفحه اصلی</a>
-    <a href="human.html">انسان</a>
-    <a href="arts.html">آثار هنری</a>
-    <a href="bizarre.html">عجیب غریب</a>
-    <a href="news.html">اخبار</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="contact.html">تماس با ما</a>
   </nav>
 
   <main>
-    <!-- درباره ما -->
-  <section class="about-us">
-    <div class="about-content">
-      <img src="godarzi22.png" alt="تصویر مربوط به سایت" class="about-image">
-      <div class="about-text">
-        <h2>درباره ما</h2>
-        <p>
-          ما در قتل نیوز تلاش می‌کنیم بهترین و خاص‌ترین تجربه‌ها را برای شما فراهم کنیم. هدف ما این است که محتوای بی‌نظیر و محصولات منحصربه‌فردی را به شما ارائه دهیم. کریسمس امسال را با ما خاص‌تر بسازید!
-        </p>
-      </div>
-    </div>
-  </section>
-
-
       <h3>جدیدترین محصولات</h3>
     <div class="products">
-      <a href="parsa/parsa.html">
-        <div class="product">
-          <img src="parsa2.jpg" alt="پارسا">
-          <h5>پارسا مدل: shower کد: 43kg</h5>
-        </div>
-      </a>
-      <a href="nima/nima.html">
-        <div class="product">
-          <img src="nima2.jpg" alt="نیما">
-          <h5>نیما مدل: Zombie کد: 149131</h5>
-        </div>
-      </a>
-      <a href="matin/matin.html">
-        <div class="product">
-          <img src="matin.jpg" alt="متین">
-          <h5>متین مدل: Firstday کد: 1402</h5>
-        </div>
-      </a>
-      <a href="alikordi/alikordi.html">
-        <div class="product">
-          <img src="alikordi4.jpg" alt="علی کردی">
-          <h5>علی کردی مدل: سوءتغذیه کد: 4859</h5>
-        </div>
-      </a>
-      <a href="hadichopan/hadichopan.html">
-        <div class="product">
-          <img src="hadichopan.jpg" alt="هادی چوپان">
-          <h5>هادی چوپان مدل:عربده کد:86</h5>
-        </div>
-      </a>
-      <a href="more.html">
-        <div class="product">
-          <img src="https://icongr.am/clarity/ellipsis-horizontal.svg?size=30&color=currentColor" alt="more">
-          <h5>بیشتر</h5>
-        </div>
-      </a>
+      <div class="product">
+        <img src="parsa2.jpg" alt="پارسا">
+        <h5>پارسا مدل: shower کد: 43kg</h5>
+      </div>
+      <div class="product">
+        <img src="nima2.jpg" alt="نیما">
+        <h5>نیما مدل: Zombie کد: 149131</h5>
+      </div>
+      <div class="product">
+        <img src="matin.jpg" alt="متین">
+        <h5>متین مدل: Firstday کد: 1402</h5>
+      </div>
+      <div class="product">
+        <img src="alikordi4.jpg" alt="علی کردی">
+        <h5>علی کردی مدل: سوءتغذیه کد: 4859</h5>
+      </div>
+      <div class="product">
+        <img src="hadichopan.jpg" alt="هادی چوپان">
+        <h5>هادی چوپان مدل: عربده کد: 34</h5>
+      </div>
     </div>
   </main>
 
